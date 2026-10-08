@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Projects Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="normal-page">
+
+	<div class="maxwidth">
+
+		{{> header }}
+
+		<section class="projects section">
+					<div class="fixed">
+
+						<div class="projects__in">
+
+							<div class="projects__top section-top flex">
+								<div class="section-top__col section-top__col--1">
+									<div class="projects__title section-title section-title--90">
+										Все проекты
+									</div>
+								</div>
+								<div class="section-top__col section-top__col--2">
+									<div class="projects__filter filter">
+										<div class="filter__buttons">
+											<div class="filter__button filter__button--open flex">
+												<div class="filter__button-btn btn btn--ico flex">
+													<span class="btn__text">Выберите фильтры</span>
+													<span class="btn__ico"><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.2778 15.5556C12.1187 15.5556 13.6111 17.0479 13.6111 18.8889C13.6111 20.7298 12.1187 22.2222 10.2778 22.2222C8.4368 22.2222 6.94442 20.7298 6.94442 18.8889C6.94442 17.0479 8.4368 15.5556 10.2778 15.5556Z" fill="#1C274C"/><path d="M15.8333 4.44444C13.9924 4.44444 12.5 5.93683 12.5 7.77778C12.5 9.61872 13.9924 11.1111 15.8333 11.1111C17.6743 11.1111 19.1666 9.61872 19.1666 7.77778C19.1666 5.93683 17.6743 4.44444 15.8333 4.44444Z" fill="#1C274C"/><path d="M9.72219 6.89835C10.1824 6.89835 10.5555 7.27145 10.5555 7.73169C10.5555 8.19193 10.1824 8.56502 9.72219 8.56502L1.94442 8.56502C1.48418 8.56502 1.11108 8.19192 1.11108 7.73169C1.11108 7.27145 1.48418 6.89835 1.94442 6.89835H9.72219Z" fill="#1C274C"/><path d="M16.3889 18.0095C15.9286 18.0095 15.5555 18.3826 15.5555 18.8428C15.5555 19.303 15.9286 19.6761 16.3889 19.6761H24.1666C24.6269 19.6761 25 19.303 25 18.8428C25 18.3826 24.6269 18.0095 24.1666 18.0095H16.3889Z" fill="#1C274C"/><path d="M1.11108 18.8428C1.11108 18.3826 1.48418 18.0095 1.94442 18.0095H4.16664C4.62688 18.0095 4.99997 18.3826 4.99997 18.8428C4.99997 19.303 4.62688 19.6761 4.16664 19.6761H1.94442C1.48418 19.6761 1.11108 19.303 1.11108 18.8428Z" fill="#1C274C"/><path d="M24.1666 6.89835C24.6269 6.89835 25 7.27145 25 7.73169C25 8.19193 24.6269 8.56502 24.1666 8.56502L21.9444 8.56502C21.4842 8.56502 21.1111 8.19192 21.1111 7.73169C21.1111 7.27145 21.4842 6.89835 21.9444 6.89835H24.1666Z" fill="#1C274C"/></svg></span>
+												</div>
+											</div>
+											<div class="filter__button filter__button--close flex">
+												<div class="filter__button-btn btn btn--dark btn--ico flex">
+													<span class="btn__text">Скрыть</span>
+													<span class="btn__ico"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.89948 0.471405L0.471384 9.8995" stroke="white" stroke-width="1.33333"/><path d="M9.8996 9.89951L0.471507 0.471414" stroke="white" stroke-width="1.33333"/></svg></span>
+												</div>
+											</div>
+										</div>
+										<div class="filter__box">
+											<div class="filter__box-in">
+												<div class="filter__title section-title section-title--36">
+													Фильтры
+												</div>
+												<div class="filter__sections">
+													<div class="filter__section">
+														<div class="filter__section-title">
+															Услуга
+														</div>
+														<div class="filter__items items-labels flex">
+															<a href="#" class="filter__item item-labels flex">
+																<div class="item-labels__ico flex">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-1.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	Python
+																</div>
+															</a>
+															<a href="#" class="filter__item item-labels flex">
+																<div class="item-labels__ico">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-2.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	React
+																</div>
+															</a>
+															<a href="#" class="filter__item item-labels flex">
+																<div class="item-labels__ico">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-3.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	SQLite
+																</div>
+															</a>
+														</div>
+													</div>
+													<div class="filter__section">
+														<div class="filter__section-title">
+															Категория
+														</div>
+														<div class="filter__items items-labels flex">
+															<a href="#" class="filter__item item-labels flex filter__item--active">
+																<div class="item-labels__ico flex">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-1.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	Python
+																</div>
+															</a>
+															<a href="#" class="filter__item item-labels flex filter__item--active">
+																<div class="item-labels__ico">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-2.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	React
+																</div>
+															</a>
+															<a href="#" class="filter__item item-labels flex">
+																<div class="item-labels__ico">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-3.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	SQLite
+																</div>
+															</a>
+														</div>
+													</div>
+													<div class="filter__section">
+														<div class="filter__section-title">
+															Технология
+														</div>
+														<div class="filter__items items-labels flex">
+															<a href="#" class="filter__item item-labels flex">
+																<div class="item-labels__ico flex">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-1.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	Python
+																</div>
+															</a>
+															<a href="#" class="filter__item item-labels flex">
+																<div class="item-labels__ico">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-2.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	React
+																</div>
+															</a>
+															<a href="#" class="filter__item item-labels flex">
+																<div class="item-labels__ico">
+																	<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-3.svg')"></div>
+																</div>
+																<div class="item-labels__text">
+																	SQLite
+																</div>
+															</a>
+														</div>
+													</div>
+												</div>
+												<div class="filter__reset flex">
+													<div class="filter__reset-btn btn  flex">
+														<span class="btn__text">Сбросить настройки</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="projects__items grid">
+								<div class="projects__item items-cases__item">
+									<div class="items-cases__box items-cases__box--light">
+										<div class="items-cases__main">
+											<div class="items-cases__advantages flex">
+												<div class="items-cases__advantage flex">
+													<div class="items-cases__advantage-ico"></div>
+													<div class="items-cases__advantage-text">
+														<b>Увеличение продаж:</b><br>
+														+260% в первый квартал после запуска
+													</div>
+												</div>
+												<div class="items-cases__advantage flex">
+													<div class="items-cases__advantage-ico"></div>
+													<div class="items-cases__advantage-text">
+														<b>Рост конверсий:</b><br>
+														+145% по сравнению с предыдущим сайтом
+													</div>
+												</div>
+											</div>
+											<div class="items-cases__image image-responsive">
+												<a href="#"><img src="img/case-image-1.png" alt="" class="image-responsive__image"></a>
+											</div>
+										</div>
+										<div class="items-cases__cont">
+											<div class="items-cases__top flex">
+												<div class="items-cases__top-col items-cases__top-col--1">
+													<div class="items-cases__title">
+														<a href="#">В заголовке максимум 40 знаков писать.</a>
+													</div>
+													<div class="items-cases__text">
+														Здесь максимум 80 знаков писать
+													</div>
+												</div>
+												<div class="items-cases__top-col items-cases__top-col--2">
+													<div class="items-cases__more flex">
+														<a href="#" class="first__free-order-btn btn btn--mini flex">
+															<span class="btn__text">Сайт</span>
+															<span class="btn__arrow">
+																<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 5.93886H17.4209M17.4209 5.93886L12.3446 0.5M17.4209 5.93886L12.3446 11.3777" stroke="#0B0B0B" stroke-linecap="round" stroke-linejoin="round"/></svg>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="items-cases__labels items-labels flex">
+												<a href="#" class="filter__item item-labels flex">
+													<div class="item-labels__ico">
+														<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-7.svg')"></div>
+													</div>
+													<div class="item-labels__text">
+														Веб-сайт
+													</div>
+												</a>
+												<a href="#" class="filter__item item-labels flex">
+													<div class="item-labels__ico">
+														<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-3.svg')"></div>
+													</div>
+													<div class="item-labels__text">
+														SQLite
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="projects__item items-cases__item">
+									<div class="items-cases__box items-cases__box--light">
+										<div class="items-cases__main">
+
+											<div class="items-cases__advantages flex">
+												<div class="items-cases__advantage flex">
+													<div class="items-cases__advantage-ico"></div>
+													<div class="items-cases__advantage-text">
+														<b>Увеличение продаж:</b><br>
+														+260% в первый квартал после запуска
+													</div>
+												</div>
+												<div class="items-cases__advantage flex">
+													<div class="items-cases__advantage-ico"></div>
+													<div class="items-cases__advantage-text">
+														<b>Рост конверсий:</b><br>
+														+145% по сравнению с предыдущим сайтом
+													</div>
+												</div>
+											</div>
+											<div class="items-cases__image image-responsive">
+												<a href="#"><img src="img/case-image-2.png" alt="" class="image-responsive__image"></a>
+											</div>
+										</div>
+										<div class="items-cases__cont">
+											<div class="items-cases__top flex">
+												<div class="items-cases__top-col items-cases__top-col--1">
+													<div class="items-cases__title">
+														<a href="#">В заголовке максимум 40 знаков писать.</a>
+													</div>
+													<div class="items-cases__text">
+														Здесь максимум 80 знаков писать
+													</div>
+												</div>
+												<div class="items-cases__top-col items-cases__top-col--2">
+													<div class="items-cases__more flex">
+														<a href="#" class="first__free-order-btn btn btn--mini flex">
+															<span class="btn__text">Сайт</span>
+															<span class="btn__arrow">
+																<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 5.93886H17.4209M17.4209 5.93886L12.3446 0.5M17.4209 5.93886L12.3446 11.3777" stroke="#0B0B0B" stroke-linecap="round" stroke-linejoin="round"/></svg>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="items-cases__labels items-labels flex">
+												<a href="#" class="filter__item item-labels flex">
+													<div class="item-labels__ico">
+														<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-7.svg')"></div>
+													</div>
+													<div class="item-labels__text">
+														Веб-сайт
+													</div>
+												</a>
+												<a href="#" class="filter__item item-labels flex">
+													<div class="item-labels__ico">
+														<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-3.svg')"></div>
+													</div>
+													<div class="item-labels__text">
+														SQLite
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="projects__item items-cases__item">
+									<div class="items-cases__box items-cases__box--light">
+										<div class="items-cases__main">
+											<div class="items-cases__advantages flex">
+												<div class="items-cases__advantage flex">
+													<div class="items-cases__advantage-ico"></div>
+													<div class="items-cases__advantage-text">
+														<b>Увеличение продаж:</b><br>
+														+260% в первый квартал после запуска
+													</div>
+												</div>
+												<div class="items-cases__advantage flex">
+													<div class="items-cases__advantage-ico"></div>
+													<div class="items-cases__advantage-text">
+														<b>Рост конверсий:</b><br>
+														+145% по сравнению с предыдущим сайтом
+													</div>
+												</div>
+											</div>
+											<div class="items-cases__image image-responsive">
+												<a href="#"><img src="img/case-image-3.png" alt="" class="image-responsive__image"></a>
+											</div>
+										</div>
+										<div class="items-cases__cont">
+											<div class="items-cases__top flex">
+												<div class="items-cases__top-col items-cases__top-col--1">
+													<div class="items-cases__title">
+														<a href="#">В заголовке максимум 40 знаков писать.</a>
+													</div>
+													<div class="items-cases__text">
+														Здесь максимум 80 знаков писать
+													</div>
+												</div>
+												<div class="items-cases__top-col items-cases__top-col--2">
+													<div class="items-cases__more flex">
+														<a href="#" class="first__free-order-btn btn btn--mini flex">
+															<span class="btn__text">Сайт</span>
+															<span class="btn__arrow">
+																<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 5.93886H17.4209M17.4209 5.93886L12.3446 0.5M17.4209 5.93886L12.3446 11.3777" stroke="#0B0B0B" stroke-linecap="round" stroke-linejoin="round"/></svg>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="items-cases__labels items-labels flex">
+												<a href="#" class="filter__item item-labels flex">
+													<div class="item-labels__ico">
+														<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-7.svg')"></div>
+													</div>
+													<div class="item-labels__text">
+														Веб-сайт
+													</div>
+												</a>
+												<a href="#" class="filter__item item-labels flex">
+													<div class="item-labels__ico">
+														<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-3.svg')"></div>
+													</div>
+													<div class="item-labels__text">
+														SQLite
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="projects__item items-cases__item">
+									<div class="items-cases__box items-cases__box--light">
+										<div class="items-cases__main">
+											<div class="items-cases__advantages flex">
+												<div class="items-cases__advantage flex">
+													<div class="items-cases__advantage-ico"></div>
+													<div class="items-cases__advantage-text">
+														<b>Увеличение продаж:</b><br>
+														+260% в первый квартал после запуска
+													</div>
+												</div>
+												<div class="items-cases__advantage flex">
+													<div class="items-cases__advantage-ico"></div>
+													<div class="items-cases__advantage-text">
+														<b>Рост конверсий:</b><br>
+														+145% по сравнению с предыдущим сайтом
+													</div>
+												</div>
+											</div>
+											<div class="items-cases__image image-responsive">
+												<a href="#"><img src="img/case-image-4.png" alt="" class="image-responsive__image"></a>
+											</div>
+										</div>
+										<div class="items-cases__cont">
+											<div class="items-cases__top flex">
+												<div class="items-cases__top-col items-cases__top-col--1">
+													<div class="items-cases__title">
+														<a href="#">В заголовке максимум 40 знаков писать.</a>
+													</div>
+													<div class="items-cases__text">
+														Здесь максимум 80 знаков писать
+													</div>
+												</div>
+												<div class="items-cases__top-col items-cases__top-col--2">
+													<div class="items-cases__more flex">
+														<a href="#" class="first__free-order-btn btn btn--mini flex">
+															<span class="btn__text">Сайт</span>
+															<span class="btn__arrow">
+																<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 5.93886H17.4209M17.4209 5.93886L12.3446 0.5M17.4209 5.93886L12.3446 11.3777" stroke="#0B0B0B" stroke-linecap="round" stroke-linejoin="round"/></svg>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="items-cases__labels items-labels flex">
+												<a href="#" class="filter__item item-labels flex">
+													<div class="item-labels__ico">
+														<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-7.svg')"></div>
+													</div>
+													<div class="item-labels__text">
+														Веб-сайт
+													</div>
+												</a>
+												<a href="#" class="filter__item item-labels flex">
+													<div class="item-labels__ico">
+														<div class="item-labels__ico-image" style="background-image: url('img/tech-ico-3.svg')"></div>
+													</div>
+													<div class="item-labels__text">
+														SQLite
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="projects__pagination pagination">
+								<div class="pagination__items flex">
+									<a href="#" class="pagination__pn pagination__pn--prev"></a>
+									<a href="#" class="pagination__item pagination__item--link pagination__item--current">1</a>
+									<a href="#" class="pagination__item pagination__item--link">2</a>
+									<a href="#" class="pagination__item pagination__item--link">3</a>
+									<a href="#" class="pagination__item pagination__item--dotted">...</a>
+									<a href="#" class="pagination__item pagination__item--link">9</a>
+									<a href="#" class="pagination__item pagination__item--link">10</a>
+									<a href="#" class="pagination__pn pagination__pn--next"></a>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</section>
+
+		{{> footer }}
+
+		{{> mob }}
+
+	</div>
+
+	<script type="module" src="/src/js/main.js"></script>
+
+</body>
+</html>
