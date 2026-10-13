@@ -1,3 +1,5 @@
+import $ from '../jquery-global.js'
+
 export function initFilter() {
     $('.filter__button').on('click', function (e) {
         e.preventDefault()

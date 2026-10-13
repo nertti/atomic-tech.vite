@@ -1,35 +1,37 @@
 import { defineConfig } from 'vite'
 import handlebars from 'vite-plugin-handlebars'
-import { resolve } from 'path'
+import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const root = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
-    // Указываем Vite использовать относительные пути для сборки
     base: './',
+    appType: 'mpa',
 
     plugins: [
         handlebars({
-            partialDirectory: resolve(__dirname, 'src/partials'),
+            partialDirectory: resolve(root, 'src/partials'),
         }),
     ],
     build: {
-        rollupOptions: {
+        rolldownOptions: {
             input: {
-                main: resolve(__dirname, 'index.html'),
-                projects: resolve(__dirname, 'projects.html'),
-                detail: resolve(__dirname, 'detail.html'),
-                notFound: resolve(__dirname, '404.html'),
-                policy: resolve(__dirname, 'policy.html'),
+                home: resolve(root, 'index.html'),
+                projects: resolve(root, 'projects.html'),
+                detail: resolve(root, 'detail.html'),
+                notFound: resolve(root, '404.html'),
+                policy: resolve(root, 'policy.html'),
             },
             output: {
-                entryFileNames: 'js/[name].js',
-                chunkFileNames: 'js/[name].js',
+                entryFileNames: 'js/[name]-[hash].js',
+                chunkFileNames: 'js/[name]-[hash].js',
                 assetFileNames: (assetInfo) => {
-                    if (!assetInfo.name) return 'assets/[name].[ext]';
-                    const name = assetInfo.name;
-                    if (name.endsWith('.css')) return 'css/[name].[ext]';
-                    if (/\.(png|jpe?g|gif|svg|webp|avif)$/i.test(name)) return 'img/[name].[ext]';
-                    if (/\.(woff2?|eot|ttf|otf)$/i.test(name)) return 'fonts/[name].[ext]';
-                    return 'assets/[name].[ext]';
+                    const name = assetInfo.names?.[0] ?? ''
+                    if (name.endsWith('.css')) return 'css/[name]-[hash][extname]'
+                    if (/\.(png|jpe?g|gif|svg|webp|avif)$/i.test(name)) return 'img/[name]-[hash][extname]'
+                    if (/\.(woff2?|eot|ttf|otf)$/i.test(name)) return 'fonts/[name]-[hash][extname]'
+                    return 'assets/[name]-[hash][extname]'
                 },
             },
         },

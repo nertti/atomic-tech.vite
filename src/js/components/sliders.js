@@ -1,3 +1,5 @@
+import $ from '../jquery-global.js'
+
 const sliderPrevArrowCode = '<div class="slider__arrow slider__arrow--prev flex"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.4209 5.93886H0.5M0.5 5.93886L5.57627 0.5M0.5 5.93886L5.57627 11.3777" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
 const sliderNextArrowCode = '<div class="slider__arrow slider__arrow--next flex"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 5.93886H17.4209M17.4209 5.93886L12.3446 0.5M17.4209 5.93886L12.3446 11.3777" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
 

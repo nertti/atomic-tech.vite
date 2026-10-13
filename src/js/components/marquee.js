@@ -1,3 +1,5 @@
+import $ from '../jquery-global.js'
+
 export function initMarquee() {
     $('.marquee-js').each(function () {
         const itemsLength = $(this).find('.marquee-items > div').length
