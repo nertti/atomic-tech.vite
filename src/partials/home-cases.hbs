@@ -1,0 +1,60 @@
+<section class="home-cases" id="cases" aria-labelledby="home-cases-title">
+    <div class="home-cases__watermark" aria-hidden="true">Кейсы</div>
+    <div class="home-cases__intro">
+        <h2 id="home-cases-title">Мы накопили большой<br>опыт в разработке<br><span>Кастомных решений</span></h2>
+        <div class="home-cases__browse">
+            <nav class="home-cases__categories" aria-label="Категории проектов">
+                {{#each caseCategories}}
+                <a href="projects.html"><span>{{title}}</span><sup>{{count}}</sup></a>
+                {{/each}}
+            </nav>
+            <a class="home-cases__all" href="projects.html">Смотреть все проекты</a>
+        </div>
+    </div>
+    <div class="home-cases__note" aria-hidden="true">
+        <img src="/img/home-case-corners.svg" alt="">
+        <p>Не продаём отдельные часы специалистов.<br>Собираем под задачу продуктовую команду<br>и ведём проект от первой гипотезы до запуска</p>
+    </div>
+    <div class="home-cases__gallery" role="region" aria-label="Избранные проекты">
+        <div class="home-cases__slides">
+            {{#each homeCases}}
+            <article class="home-case">
+                <div class="home-case__media">
+                    <div class="home-case__images" aria-hidden="true">
+                        {{#each layers}}
+                        <img src="/img/home-case-{{this}}.png" alt="">
+                        {{/each}}
+                    </div>
+                    <div class="home-case__tags">
+                        <span class="home-case__tag">
+                            <span class="home-case__bag"><img src="/img/home-case-bag.svg" alt=""></span>
+                            Интернет-магазин
+                        </span>
+                        <span class="home-case__tag">
+                            <span class="home-case__bitrix"><img src="/img/home-case-bitrix.png" alt=""></span>
+                            1c bitrix
+                        </span>
+                    </div>
+                    <div class="home-case__metrics">
+                        {{#each metrics}}
+                        <div class="home-case__metric">
+                            <img src="/img/home-case-star{{#if small}}-small{{/if}}.svg" alt="">
+                            <p><strong>{{title}}</strong><br>{{value}}</p>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="home-case__footer">
+                    <div class="home-case__copy">
+                        <h3><a href="detail.html">{{title}}</a></h3>
+                        <p>{{description}}</p>
+                    </div>
+                    <a class="home-case__link" href="detail.html" aria-label="Открыть проект: {{title}}">
+                        <span>Сайт</span><img src="/img/home-case-arrow.svg" alt="">
+                    </a>
+                </div>
+            </article>
+            {{/each}}
+        </div>
+    </div>
+</section>

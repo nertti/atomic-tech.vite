@@ -1,0 +1,50 @@
+<header class="home-header" aria-label="Шапка сайта">
+    <div class="home-header__bar">
+        <a class="home-header__logo" href="./index.html" aria-label="Atomic — на главную">
+            <picture>
+                <source media="(max-width: 900px)" srcset="/img/home-logo-mobile.svg">
+                <img src="/img/home-logo.svg" width="97" height="26" alt="Atomic">
+            </picture>
+        </a>
+
+        <nav class="home-header__nav" id="home-navigation" aria-label="Основная навигация">
+            <details class="home-services">
+                <summary>Услуги <img src="/img/home-chevron.svg" alt=""></summary>
+                <div class="home-services__panel">
+                    <ul class="home-services__categories">
+                        <li><a class="is-current" href="#services"><span>01</span>Разработка сайтов</a><img src="/img/home-service-divider.svg" alt=""></li>
+                        <li><a href="#services"><span>02</span>Продуктовая разработка</a><img src="/img/home-service-divider.svg" alt=""></li>
+                        <li><a href="#services"><span>03</span>AI, Web3 и автоматизация</a><img src="/img/home-service-divider.svg" alt=""></li>
+                        <li><a href="#services"><span>04</span>Дизайн и контент</a><img src="/img/home-service-divider.svg" alt=""></li>
+                        <li><a href="#services"><span>05</span>Продвижение и рост</a></li>
+                    </ul>
+                    <div class="home-services__content">
+                        <h2>Разработка сайтов под ключ</h2>
+                        <p>Посадочные, корпоративные и e-commerce проекты на технологии, которая подходит задаче бизнеса.</p>
+                        <ul class="home-services__links">
+                            <li><a class="is-current" href="#contact">Веб-разработка под ключ<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
+                            <li><a href="#contact">Корпоративные сайты<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
+                            <li><a href="#contact">Интернет-магазины<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
+                            <li><a href="#contact">Лендинги<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
+                            <li><a href="#contact">Разработка на WordPress<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
+                            <li><a href="#contact">Разработка на 1С-Битрикс<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
+                            <li><a href="#contact">Laravel-разработка<img src="/img/home-service-arrow.svg" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="home-services__image"><img src="/img/home-services.png" width="1792" height="2400" alt=""></div>
+                </div>
+            </details>
+            <a href="#cases">Кейсы</a>
+            <a href="#team">Команда</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#blog">Блог</a>
+            <a class="home-header__mobile-contact" href="#contact">Оставить заявку</a>
+        </nav>
+
+        <a class="home-header__contact" href="#contact">Оставить заявку</a>
+        <button class="home-header__toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="home-navigation" title="Меню">
+            <img src="/img/home-menu.svg" alt="">
+            <span class="home-header__close" aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</header>
