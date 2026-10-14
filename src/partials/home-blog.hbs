@@ -1,0 +1,22 @@
+<section class="home-blog" id="blog" aria-labelledby="home-blog-title">
+    <div class="home-blog__intro">
+        <h2 id="home-blog-title">Все об «атомах»<br>цифровых экосистем</h2>
+        <p>Читайте в нашем блоге.</p>
+    </div>
+    <div class="home-blog__gallery">
+        <div class="home-blog__rail" id="home-blog-rail" tabindex="0" role="region" aria-label="Статьи блога">
+            {{#each blogArticles}}
+            <article class="home-blog-card">
+                <img class="home-blog-card__image" src="/img/{{image}}" alt="" loading="lazy">
+                <div class="home-blog-card__meta"><span>{{category}}</span><span>{{minutes}} мин чтения</span></div>
+                <h3>«Ты ему нужен»: как рассылки помогли увеличить рекуррентные пожертвования</h3>
+            </article>
+            {{/each}}
+        </div>
+        <div class="home-blog__pagination" role="group" aria-label="Выбрать статью">
+            {{#each blogArticles}}
+            <button type="button" data-blog-slide="{{@index}}" aria-label="Статья {{number}}" aria-controls="home-blog-rail" aria-pressed="{{#if @first}}true{{else}}false{{/if}}"></button>
+            {{/each}}
+        </div>
+    </div>
+</section>

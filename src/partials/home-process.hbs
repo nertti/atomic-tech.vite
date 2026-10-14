@@ -1,0 +1,22 @@
+<section class="home-process" id="process" aria-labelledby="home-process-title">
+    <div class="home-studio-watermark home-process__watermark" aria-hidden="true">Процесс</div>
+    <div class="home-section-heading">
+        <h2 id="home-process-title">Понятно, что будет<br>на каждом этапе</h2>
+        <div class="home-section-note">
+            <img class="home-section-note__corners" src="/img/home-process-corners.svg" alt="" aria-hidden="true">
+            <p>Процесс можно сократить для MVP или расширить <br>для сложной экосистемы. Но логика всегда одна: <br>сначала снижаем риски, потом наращиваем вложения</p>
+        </div>
+    </div>
+    <ol class="home-process__steps">
+        {{#each processSteps}}
+        <li class="home-process-step{{#if featured}} home-process-step--featured{{/if}}">
+            <span class="home-process-step__number" aria-hidden="true">
+                <img src="/img/home-process-step{{#if featured}}-active{{/if}}.svg" alt="">
+                {{number}}
+            </span>
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+        </li>
+        {{/each}}
+    </ol>
+</section>

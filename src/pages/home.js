@@ -2,9 +2,15 @@ import '../js/main.js'
 import '../css/home.css'
 import '../css/home-sections.css'
 import '../css/home-cases.css'
+import '../css/home-studio.css'
+import '../css/home-ending.css'
 import { initHomeCases } from '../js/components/home-cases.js'
+import { initHomeTeam } from '../js/components/home-team.js'
+import { initHomeEnding } from '../js/components/home-ending.js'
 
 initHomeCases()
+initHomeTeam()
+initHomeEnding()
 
 const header = document.querySelector('.home-header')
 const toggle = header.querySelector('.home-header__toggle')

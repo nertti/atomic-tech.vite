@@ -1,0 +1,42 @@
+<section class="home-reviews" id="reviews" aria-label="Видео и отзывы клиентов">
+    <div class="home-video">
+        {{#if homeVideo.src}}
+        <video class="home-video__player" controls playsinline preload="none" aria-label="Видео Atomic Studio"{{#if homeVideo.poster}} poster="{{homeVideo.poster}}"{{/if}}>
+            <source src="{{homeVideo.src}}" type="video/mp4">
+            {{#if homeVideo.captions}}<track kind="captions" src="{{homeVideo.captions}}" srclang="ru" label="Русский">{{/if}}
+            <a href="{{homeVideo.src}}">Открыть видео</a>
+        </video>
+        {{else}}
+        <div class="home-video__placeholder" role="img" aria-label="Видео в разработке">
+            <img class="home-video__corners" src="/img/home-video-corners.svg" alt="">
+            <div class="home-video__caption">
+                <img src="/img/home-video-play.svg" alt="" width="63" height="62">
+                <p>Видео в разработке</p>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+    <div class="home-reviews__rows">
+        {{#each reviewRows}}
+        <div class="home-reviews__row home-reviews__row--{{@index}}" tabindex="0" role="region" aria-label="Отзывы клиентов, лента {{number}}">
+            <div class="home-reviews__track">
+                {{#each copies}}
+                <div class="home-reviews__group"{{#if duplicate}} aria-hidden="true"{{/if}}>
+                    {{#each items}}
+                    <article class="home-review">
+                        <header class="home-review__header">
+                            <div class="home-review__author"><h3>{{name}}</h3><p>{{company}}</p></div>
+                            <div class="home-review__rating" aria-label="Оценка: 5 из 5">
+                                <img src="/img/home-review-star.svg" alt=""><img src="/img/home-review-star.svg" alt=""><img src="/img/home-review-star.svg" alt=""><img src="/img/home-review-star.svg" alt=""><img src="/img/home-review-star.svg" alt="">
+                            </div>
+                        </header>
+                        <p class="home-review__text">{{text}}</p>
+                    </article>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>

@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import handlebars from 'vite-plugin-handlebars'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { requestKinds, serviceGroups, homeCases, caseCategories } from './src/data/home-content.js'
+import { requestKinds, serviceGroups, homeCases, caseCategories, whyPoints, processSteps, teamMembers, homeVideo, reviewRows, blogArticles } from './src/data/home-content.js'
 
 const root = fileURLToPath(new URL('.', import.meta.url))
 
@@ -13,7 +13,7 @@ export default defineConfig({
     plugins: [
         handlebars({
             partialDirectory: resolve(root, 'src/partials'),
-            context: { requestKinds, serviceGroups, homeCases, caseCategories },
+            context: { requestKinds, serviceGroups, homeCases, caseCategories, whyPoints, processSteps, teamMembers, homeVideo, reviewRows, blogArticles },
         }),
     ],
     build: {

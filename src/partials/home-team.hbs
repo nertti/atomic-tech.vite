@@ -1,0 +1,47 @@
+<section class="home-team" id="team" aria-labelledby="home-team-title">
+    <div class="home-team__intro">
+        <div class="home-team__leader">
+            <div class="home-team__portrait">
+                <img src="/img/home-team-albert.jpg" alt="Альберт Каренович" loading="lazy" decoding="async">
+            </div>
+            <h3>Альберт Каренович</h3>
+            <p>СЕО Atomic Studio</p>
+        </div>
+        <blockquote class="home-team__quote">
+            <img class="home-team__quote-corners" src="/img/home-team-quote-corners.svg" alt="" aria-hidden="true">
+            <p>«Нужно любить то, что делаешь,<br>и тогда труд — даже самый грубый<br>— возвышается до творчества»</p>
+            <cite>— М. Горький</cite>
+            <img class="home-team__signature" src="/img/home-team-signature.svg" alt="" aria-hidden="true">
+        </blockquote>
+    </div>
+    <div class="home-team__story">
+        <div class="home-studio-watermark home-team__watermark" aria-hidden="true">Команда</div>
+        <h2 id="home-team-title">Креативных</h2>
+        <p>Именно по этому в нашей команде опытные специалисты, которые любят и преданы своему делу!</p>
+    </div>
+    <div class="home-team__members">
+        <div class="home-team__rail" id="home-team-members" role="region" aria-label="Сотрудники Atomic Studio" tabindex="0">
+            {{#each teamMembers}}
+            <article class="home-team-card home-team-card--{{variant}}">
+                <div class="home-team-card__avatar">
+                    <img src="/img/{{image}}" alt="" loading="lazy" decoding="async">
+                </div>
+                <h3>{{name}}</h3>
+                <p class="home-team-card__role">{{role}}</p>
+                <p class="home-team-card__description">{{description}}</p>
+            </article>
+            {{/each}}
+        </div>
+        <div class="home-team__controls">
+            <p class="home-team__count">Команда:<sup>+17</sup></p>
+            <div class="home-team__buttons">
+                <button class="home-team__previous" type="button" aria-label="Предыдущие сотрудники" aria-controls="home-team-members" title="Предыдущие сотрудники" disabled>
+                    <img src="/img/home-team-prev.svg" alt="">
+                </button>
+                <button class="home-team__next" type="button" aria-label="Следующие сотрудники" aria-controls="home-team-members" title="Следующие сотрудники">
+                    <img src="/img/home-team-next.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
