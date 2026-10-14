@@ -17,6 +17,7 @@ export default defineConfig({
         }),
     ],
     build: {
+        outDir: 'docs',
         rolldownOptions: {
             input: {
                 home: resolve(root, 'index.html'),
