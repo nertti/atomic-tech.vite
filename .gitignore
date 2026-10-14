@@ -4,7 +4,7 @@ jspm_packages/
 web_modules/
 
 # Результаты сборки (генерируются заново через npm run build)
-dist/
+#dist/
 build/
 
 # Локальный кэш Vite и инструментов сборки
