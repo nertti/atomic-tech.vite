@@ -1,13 +1,11 @@
 <section class="home-why" id="why-us" aria-labelledby="home-why-title">
-    <div class="home-studio-watermark home-why__watermark" aria-hidden="true"><span>Почему мы</span><span>Мы</span></div>
     <div class="home-section-heading">
         <h2 id="home-why-title">Работаем как часть<br><span>вашей команды</span></h2>
         <div class="home-section-note">
-            <img class="home-section-note__corners" src="/img/home-why-corners.svg" alt="" aria-hidden="true">
-            <p>Не продаём отдельные часы специалистов.<br>Собираем под задачу продуктовую команду<br>и ведём проект от первой гипотезы до запуска</p>
+            <p>Не продаём отдельные часы специалистов. Собираем под задачу продуктовую команду и ведём проект от первой гипотезы до запуска</p>
         </div>
     </div>
-    <div class="home-why__cards">
+    <div class="home-why__cards" tabindex="0" role="region" aria-label="Преимущества команды">
         {{#each whyPoints}}
         <article class="home-why-card{{#if variant}} home-why-card--{{variant}}{{/if}}">
             <span class="home-why-card__number" aria-hidden="true">{{number}}</span>
@@ -18,4 +16,5 @@
         </article>
         {{/each}}
     </div>
+    <div class="home-scroll-progress" data-scroll-progress=".home-why__cards" aria-hidden="true"><span></span></div>
 </section>

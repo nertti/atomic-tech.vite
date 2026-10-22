@@ -1,3 +1,5 @@
+import { enableRailDrag } from './horizontal-rail.js'
+
 export function initHomeTeam() {
     const team = document.querySelector('.home-team')
     if (!team) return
@@ -27,6 +29,7 @@ export function initHomeTeam() {
 
     previous.addEventListener('click', () => move(-1))
     next.addEventListener('click', () => move(1))
+    enableRailDrag(rail)
     rail.addEventListener('scroll', updateControls, { passive: true })
     new ResizeObserver(updateControls).observe(rail)
     updateControls()

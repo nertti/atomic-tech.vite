@@ -58,8 +58,8 @@ export const serviceGroups = [
 export const homeCases = [
     {
         title: 'В заголовке максимум 40 знаков писать',
-        description: 'Здесь максимум 80 знаков писать',
-        layers: ['base', '1'],
+        description: 'Искусственный интеллект меняет рынок труда. Автоматизация вытесняет рутину, но создаёт новые профессии. Какие навыки будут в цене завтра?',
+        layers: ['1'],
         metrics: [
             { title: 'Увеличение продаж:', value: '+260% в первый квартал после запуска' },
             { title: 'Рост конверсий:', value: '+145% по сравнению с предыдущим сайтом' },
@@ -68,7 +68,7 @@ export const homeCases = [
     {
         title: '“M-Dental” сайт стоматологии',
         description: 'Сайт интеграционного оператора железнодорожных транзитных сервисов между Китаем и Европой',
-        layers: ['base', '1', '2'],
+        layers: ['1'],
         metrics: [
             { title: 'Увеличение продаж:', value: '+260% в первый квартал после запуска' },
             { title: 'Рост конверсий:', value: '+145% по сравнению с предыдущим сайтом' },
@@ -77,29 +77,20 @@ export const homeCases = [
     {
         title: '“M-Dental” сайт стоматологии',
         description: 'Сайт интеграционного оператора железнодорожных транзитных сервисов между Китаем и Европой',
-        layers: ['3'],
+        layers: ['1'],
         metrics: [
             { title: 'Максимум писать 23 знака.', value: 'Максимум поместится 45 знаков, учитывайте это!' },
             { title: 'Максимум писать 23 знака.', value: 'Максимум поместится 45 знаков, учитывайте это!', small: true },
-        ],
-    },
-    {
-        title: '“M-Dental” сайт стоматологии',
-        description: 'Сайт интеграционного оператора железнодорожных транзитных сервисов между Китаем и Европой',
-        layers: ['base', '1', '4'],
-        metrics: [
-            { title: 'Увеличение продаж:', value: '+260% в первый квартал после запуска' },
-            { title: 'Рост конверсий:', value: '+145% по сравнению с предыдущим сайтом' },
         ],
     },
 ]
 
 export const caseCategories = [
     { title: 'Индивидуальные решения', count: 11 },
-    { title: 'Интернет магазины', count: 10 },
-    { title: 'Retail', count: 15 },
     { title: 'Web3', count: 2 },
+    { title: 'Интернет магазины', count: 10 },
     { title: 'Web-сайты', count: 1 },
+    { title: 'Retail', count: 15 },
     { title: 'FMCG', count: 8 },
 ]
 
@@ -127,14 +118,13 @@ export const whyPoints = [
     },
     {
         number: '05',
-        variant: 'support',
         title: 'Не исчезаем после релиза',
         description: 'Поддерживаем, анализируем и развиваем продукт после запуска',
     },
 ]
 
 export const processSteps = [
-    { number: '01', title: 'Погружение', description: 'Разбираем бизнес-задачу, ограничения, аудиторию и критерии успеха', featured: true },
+    { number: '01', title: 'Погружение', description: 'Разбираем бизнес-задачу, ограничения, аудиторию и критерии успеха' },
     { number: '02', title: 'Концепция', description: 'Проектируем сценарии, архитектуру и прототип — до начала дорогой разработки' },
     { number: '03', title: 'Дизайн', description: 'Собираем визуальную систему и интерфейс, который объясняет и продаёт продукт' },
     { number: '04', title: 'Разработка', description: 'Делаем итерациями, показываем прогресс и проверяем ключевые сценарии' },
@@ -196,7 +186,8 @@ export const reviewRows = [[2, 2, 3, 0, 0, 1], [0, 1, 2, 3, 3, 3]].map((order, i
 })
 
 export const blogArticles = [
-    { number: 1, image: 'home-blog-1.png', category: 'Бизнес', minutes: 7 },
-    { number: 2, image: 'home-blog-2.png', category: 'E-mail', minutes: 8 },
-    { number: 3, image: 'home-blog-3.png', category: 'Дизайн', minutes: 3 },
+    // Replace the section placeholders with article URLs when they are available.
+    { number: 1, image: 'home-blog-1.png', category: 'Бизнес', minutes: 7, href: '#blog' },
+    { number: 2, image: 'home-blog-2.png', category: 'E-mail', minutes: 8, href: '#blog' },
+    { number: 3, image: 'home-blog-3.png', category: 'Дизайн', minutes: 3, href: '#blog' },
 ]

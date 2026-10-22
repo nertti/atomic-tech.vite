@@ -4,13 +4,30 @@ import '../css/home-sections.css'
 import '../css/home-cases.css'
 import '../css/home-studio.css'
 import '../css/home-ending.css'
+import '../css/home-v2.css'
 import { initHomeCases } from '../js/components/home-cases.js'
+import { initHomeCatalog } from '../js/components/home-catalog.js'
 import { initHomeTeam } from '../js/components/home-team.js'
 import { initHomeEnding } from '../js/components/home-ending.js'
 
 initHomeCases()
+initHomeCatalog()
 initHomeTeam()
 initHomeEnding()
+
+document.querySelectorAll('[data-scroll-progress]').forEach((progress) => {
+    const rail = document.querySelector(progress.dataset.scrollProgress)
+    const update = () => {
+        const max = rail.scrollWidth - rail.clientWidth
+        progress.hidden = max <= 1
+        const width = Math.max(12, 56 * rail.clientWidth / rail.scrollWidth)
+        progress.style.setProperty('--thumb-width', `${width}px`)
+        progress.style.setProperty('--thumb-offset', `${max > 0 ? (56 - width) * rail.scrollLeft / max : 0}px`)
+    }
+    rail.addEventListener('scroll', update, { passive: true })
+    new ResizeObserver(update).observe(rail)
+    update()
+})
 
 const header = document.querySelector('.home-header')
 const toggle = header.querySelector('.home-header__toggle')

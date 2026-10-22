@@ -4,6 +4,14 @@
 	--default-color: #0B0B0B;
 	--gray-color: #C4C4C4;
 	--green-color: #00636F;
+	--hover-duration: 280ms;
+	--hover-easing: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--hover-duration: 0ms;
+	}
 }
 
 /* Scroll Bar */
@@ -164,7 +172,13 @@ input, button, select, textarea {
 }
 button, a {
 	cursor: pointer;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
+}
+.first__stats-box,
+.items-cases__box,
+.items-blog__box,
+.item-news__box {
+	cursor: pointer;
 }
 table {
 	border-collapse: collapse;
@@ -294,7 +308,7 @@ img {
 	justify-content: center;
 	padding: 25px 35px;
 	color: var(--default-color);
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 	text-align: center;
 	text-decoration: none!important;
 	font-size: 22px;
@@ -309,8 +323,9 @@ img {
 	overflow: hidden;
 	cursor: pointer;
 }
-.btn__arrow > svg > path {
-	transition: 300ms;
+.btn__arrow > svg > path,
+.btn__ico > svg > path {
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .btn__arrow {
 	transform: translateY(1px);
@@ -352,7 +367,7 @@ img {
 	top: 0;
 	left: 0;
 	transform: translateY(100%);
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .btn__text,
 .btn__arrow,
@@ -576,7 +591,7 @@ textarea.input-class {
 	width: 138px;
 	filter: invert(1);
 	opacity: 0.65;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .head__logo:hover .logo__image {
 	opacity: 1;
@@ -589,7 +604,7 @@ textarea.input-class {
 	padding: 14px 30px;
 	gap: 11px;
 	cursor: pointer;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 	min-height: 53px;
 }
 .head__burger:hover {
@@ -637,7 +652,7 @@ textarea.input-class {
 	display: block;
 	padding: 10px 22px;
 	border-radius: 50px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 	text-decoration: none!important;
 	font-size: 18px;
 	font-weight: bold;
@@ -733,19 +748,19 @@ textarea.input-class {
 	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
 	border-radius: 22px;
 	padding: 21px 40px 32px 40px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .first__stats-num {
 	color: rgba(255, 255, 255, 0.6);
 	font-size: 120px;
 	font-weight: 700;
 	line-height: 1;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .first__stats-text {
 	color: rgba(255, 255, 255, 0.5);
 	font-size: 18px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .first__stats-box:hover {
 	background: linear-gradient(0deg, #00CCFF, #00CCFF), radial-gradient(79.83% 100% at 50% 100%, #E99FF3 0%, #AE3FD9 25%, #7315AB 50%, #441171 75%, #1A0730 100%);
@@ -780,7 +795,7 @@ textarea.input-class {
 	font-size: 22px;
 	font-weight: 500;
 	text-decoration: none;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 	min-width: 255px;
 	justify-content: space-between;
 	align-items: center;
@@ -800,7 +815,7 @@ textarea.input-class {
 	font-size: 16px;
 	font-weight: 500;
 	border-radius: 50px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .step-button__btn:hover {
 	background: var(--default-color);
@@ -842,7 +857,7 @@ textarea.input-class {
 	font-weight: bold;
 	letter-spacing: -0.43px;
 	gap: 5px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .items-links__count {
 	font-size: 14px;
@@ -868,7 +883,7 @@ textarea.input-class {
 	background: #EEEFF5;
 	border-radius: 25px;
 	overflow: hidden;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .items-cases__box--light {
 	background: transparent;
@@ -957,7 +972,7 @@ textarea.input-class {
 	font-size: 36px;
 }
 .items-cases__title a {
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .items-cases__title a:hover {
 	text-decoration: none;
@@ -970,7 +985,7 @@ textarea.input-class {
 	font-size: 18px;
 }
 .items-cases__image img {
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .items-cases__labels {
 	margin-top: 18px;
@@ -1055,7 +1070,7 @@ textarea.input-class {
 	font-size: 22px;
 	font-weight: 500;
 	height: 100%;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 	max-width: 447px;
 	margin: 0 auto;
 }
@@ -1188,7 +1203,7 @@ textarea.input-class {
 	padding: 0 20px;
 	position: absolute;
 	border-radius: 50px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 	top: -65px;
 	z-index: 10;
 	cursor: pointer;
@@ -1328,10 +1343,10 @@ textarea.input-class {
 	top: 0;
 	left: 0;
 	z-index: 1;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .items-blog__image img {
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .items-blog__cats {
 	gap: 5px;
@@ -1496,7 +1511,7 @@ textarea.input-class {
 	font-weight: bold;
 	color: #fff;
 	text-decoration: none!important;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .footer__tg-link:hover {
 	background: rgba(255, 255, 255, 0.1);
@@ -1673,7 +1688,7 @@ a.top__link:hover {
 	top: calc((100% - 25px) / 2);
 	margin-top: -23px;
 	z-index: 5;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .single-slider .slick-arrow:before {
 	content: '';
@@ -1759,7 +1774,7 @@ a.top__link:hover {
 	font-size: 13px;
 	font-weight: bold;
 	gap: 13px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .item-labels__ico {
 	width: 26px;
@@ -1851,7 +1866,7 @@ a.item-labels:hover {
 	background: #1D1D1D;
 	border-radius: 40px;
 	padding: 26px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .item-news__image {
 	border-radius: 20px;
@@ -1859,7 +1874,7 @@ a.item-labels:hover {
 	margin-bottom: 26px;
 }
 .item-news__image img {
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .item-news__title {
 	color: #fff;
@@ -1912,7 +1927,7 @@ a.item-labels:hover {
 	position: absolute;
 	top: -110px;
 	z-index: 5;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .more__items .slick-arrow:before {
 	content: '';
@@ -1973,7 +1988,7 @@ a.item-labels:hover {
 	display: flex!important;
 	justify-content: center;
 	align-items: center;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 }
 .pagination__pn:before {
 	content: '';
@@ -2170,7 +2185,7 @@ a.item-labels:hover {
 	display: block;
 	padding: 10px 22px;
 	border-radius: 50px;
-	transition: 300ms;
+	transition: var(--hover-duration) var(--hover-easing);
 	text-decoration: none!important;
 	font-size: 16px;
 	font-weight: bold;

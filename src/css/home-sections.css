@@ -92,7 +92,7 @@
     background: var(--home-paper);
     box-shadow: 2px 4px 20px rgb(126 126 126 / 10%);
     color: var(--home-ink);
-    transition: box-shadow 160ms;
+    transition: box-shadow var(--hover-duration) var(--hover-easing);
 }
 
 .home-request-card:hover {

@@ -1,9 +1,12 @@
+import { enableRailDrag } from './horizontal-rail.js'
+
 export function initHomeEnding() {
     const blog = document.querySelector('.home-blog')
     const rail = blog.querySelector('.home-blog__rail')
     const buttons = [...blog.querySelectorAll('[data-blog-slide]')]
     const cards = [...rail.querySelectorAll('.home-blog-card')]
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    enableRailDrag(rail)
 
     function updatePagination() {
         const overflow = rail.scrollWidth - rail.clientWidth > 1

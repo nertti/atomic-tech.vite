@@ -9,6 +9,7 @@ import { initSliders } from './components/sliders.js'
 import { initMarquee } from './components/marquee.js'
 
 $(function () {
+    $.fancybox.defaults.wheel = false
     initMenu()
     initFilter()
     initSliders()

@@ -318,6 +318,7 @@
     flex: none;
     max-width: none;
     transform: rotate(180deg);
+    transition: filter var(--hover-duration) var(--hover-easing);
 }
 
 .home-case__link:hover img {

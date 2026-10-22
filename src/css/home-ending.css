@@ -56,6 +56,7 @@
 
 .home-reviews__row {
     overflow: hidden;
+    cursor: pointer;
 }
 
 .home-reviews__track,
@@ -170,6 +171,7 @@
 .home-blog__rail::-webkit-scrollbar { display: none; }
 
 .home-blog-card {
+    display: block;
     position: relative;
     height: 298px;
     overflow: hidden;
@@ -177,6 +179,15 @@
     background: #25262b;
     color: var(--home-paper);
     scroll-snap-align: center;
+}
+
+.home-blog-card:hover {
+    text-decoration: none;
+}
+
+.home-blog-card:focus-visible {
+    outline: 2px solid var(--home-accent);
+    outline-offset: -4px;
 }
 
 .home-blog-card::after {

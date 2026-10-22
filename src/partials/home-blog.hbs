@@ -6,11 +6,11 @@
     <div class="home-blog__gallery">
         <div class="home-blog__rail" id="home-blog-rail" tabindex="0" role="region" aria-label="Статьи блога">
             {{#each blogArticles}}
-            <article class="home-blog-card">
+            <a class="home-blog-card" href="{{href}}" aria-labelledby="home-blog-card-{{number}}-title">
                 <img class="home-blog-card__image" src="/img/{{image}}" alt="" loading="lazy">
                 <div class="home-blog-card__meta"><span>{{category}}</span><span>{{minutes}} мин чтения</span></div>
-                <h3>«Ты ему нужен»: как рассылки помогли увеличить рекуррентные пожертвования</h3>
-            </article>
+                <h3 id="home-blog-card-{{number}}-title">«Ты ему нужен»: как рассылки помогли увеличить рекуррентные пожертвования</h3>
+            </a>
             {{/each}}
         </div>
         <div class="home-blog__pagination" role="group" aria-label="Выбрать статью">
@@ -19,4 +19,5 @@
             {{/each}}
         </div>
     </div>
+    <a class="home-blog__link" href="#home-blog-rail">Перейти в блог<img src="/img/home-case-arrow.svg" alt=""></a>
 </section>

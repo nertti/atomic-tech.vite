@@ -1,24 +1,18 @@
 <section class="home-request" id="request" aria-labelledby="home-request-title">
-    <div class="home-section-watermark" aria-hidden="true">Запрос</div>
     <div class="home-section-heading">
         <h2 id="home-request-title">Не нужно разбираться<br>в технологиях</h2>
         <div class="home-section-note">
-            <img class="home-section-note__corners" src="/img/home-request-corners.svg" alt="" aria-hidden="true">
-            <p>Расскажите, какой результат нужен бизнесу.<br>Мы подберём формат продукта, команду<br>и понятный путь к запуску</p>
+            <p>Расскажите, какой результат нужен бизнесу. Мы подберём формат продукта, команду и понятный путь к запуску</p>
         </div>
     </div>
-    <div class="home-request__cards">
+    <div class="home-request__cards" tabindex="0" role="region" aria-label="Задачи бизнеса">
         {{#each requestKinds}}
         <a class="home-request-card home-request-card--{{variant}}" href="#contact">
             <div class="home-request-card__art home-request-card__art--{{variant}}" aria-hidden="true">
                 <div class="home-request-card__crop">
-                    <img src="/img/home-request-{{variant}}.png" width="1856" height="2304" alt="" loading="lazy">
+                    <img src="/img/home-request-{{variant}}.png" alt="" loading="lazy">
                 </div>
             </div>
-            {{#if hasEdges}}
-            <div class="home-request-card__edge home-request-card__edge--left" aria-hidden="true"><img src="/img/home-request-card-corners.svg" alt=""></div>
-            <div class="home-request-card__edge home-request-card__edge--right" aria-hidden="true"><img src="/img/home-request-card-corners.svg" alt=""></div>
-            {{/if}}
             <div class="home-request-card__copy">
                 <h3>{{title}}</h3>
                 <p>{{description}}</p>

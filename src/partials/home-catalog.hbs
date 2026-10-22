@@ -1,13 +1,11 @@
 <section class="home-catalog" id="services" aria-labelledby="home-catalog-title">
-    <div class="home-section-watermark" aria-hidden="true">Услуги</div>
     <div class="home-section-heading">
         <h2 id="home-catalog-title">От идеи &mdash;<br>до <span>работающего</span> продукта</h2>
         <div class="home-section-note">
-            <img class="home-section-note__corners" src="/img/home-catalog-corners.svg" alt="" aria-hidden="true">
-            <p>Не продаём отдельные часы специалистов.<br>Собираем под задачу продуктовую команду<br>и ведём проект от первой гипотезы до запуска</p>
+            <p>Не продаём отдельные часы специалистов. Собираем под задачу продуктовую команду и ведём проект от первой гипотезы до запуска</p>
         </div>
     </div>
-    <div class="home-catalog__cards" tabindex="0" role="region" aria-label="Направления услуг">
+    <div class="home-catalog__cards" id="home-catalog-slides" tabindex="0" role="region" aria-roledescription="карусель" aria-label="Направления услуг">
         {{#each serviceGroups}}
         <article class="home-service-card home-service-card--{{variant}}" aria-labelledby="service-{{variant}}-title">
             <div class="home-service-card__intro">
@@ -21,5 +19,14 @@
             </ul>
         </article>
         {{/each}}
+    </div>
+    <div class="home-catalog__controls" role="group" aria-label="Переключение направлений услуг">
+        <button class="home-catalog__previous" type="button" aria-label="Предыдущее направление" aria-controls="home-catalog-slides" disabled>
+            <img src="/img/home-team-prev.svg" alt="">
+        </button>
+        <div class="home-scroll-progress" data-scroll-progress=".home-catalog__cards" aria-hidden="true"><span></span></div>
+        <button class="home-catalog__next" type="button" aria-label="Следующее направление" aria-controls="home-catalog-slides">
+            <img src="/img/home-team-next.svg" alt="">
+        </button>
     </div>
 </section>
