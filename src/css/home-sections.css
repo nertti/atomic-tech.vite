@@ -338,9 +338,8 @@
 }
 
 .home-service-card__arrow {
+    display: block;
     flex: none;
-    color: var(--home-accent);
-    font-size: 13px;
 }
 
 .home-service-card__links a:focus-visible,

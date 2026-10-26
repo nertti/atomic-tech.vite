@@ -1,4 +1,6 @@
 .home-page {
+    overflow-x: clip;
+    background: var(--home-ink);
     --home-ink: #0b0b0b;
     --home-paper: #f3f3f3;
     --home-muted: #757575;
@@ -7,6 +9,7 @@
 
 .home-page .maxwidth {
     position: relative;
+    overflow: clip;
     width: 100%;
     min-width: 0;
     max-width: 100%;
@@ -26,7 +29,7 @@ html:has(> .home-page)::-webkit-scrollbar {
 }
 
 .home-header {
-    position: absolute;
+    position: fixed;
     inset: 20px 0 auto;
     z-index: 80;
     width: min(1240px, calc(100% - 48px));
@@ -201,11 +204,13 @@ html:has(> .home-page)::-webkit-scrollbar {
     cursor: pointer;
 }
 
-.home-services__categories li:hover > img,
-.home-services__categories li:has(+ li:hover) > img,
-.home-services__links li:hover > img,
-.home-services__links li:has(+ li:hover) > img {
-    opacity: 0;
+@media (hover: hover) {
+    .home-services__categories li:hover > img,
+    .home-services__categories li:has(+ li:hover) > img,
+    .home-services__links li:hover > img,
+    .home-services__links li:has(+ li:hover) > img {
+        opacity: 0;
+    }
 }
 
 .home-services__categories a,
@@ -222,25 +227,17 @@ html:has(> .home-page)::-webkit-scrollbar {
     z-index: -1;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(90deg, var(--home-accent) 16%, rgb(9 9 9 / 0%) 105%);
+    background: linear-gradient(90deg,rgba(0, 106, 116, 1) -20%, rgba(9, 9, 9, 0) 90%);
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--hover-duration) var(--hover-easing);
 }
 
-.home-services__categories .is-current::before,
-.home-services__categories li:hover > a::before,
-.home-services__links .is-current::before,
-.home-services__links li:hover > a::before {
-    opacity: 1;
-}
-
-.home-services__categories .is-current,
-.home-services__categories li:hover > a,
-.home-services__links .is-current,
-.home-services__links li:hover > a {
-    border-radius: 8px;
-    color: var(--home-ink);
+@media (hover: hover) {
+    .home-services__categories li:hover > a::before,
+    .home-services__links li:hover > a::before {
+        opacity: 1;
+    }
 }
 
 .home-services__content {
@@ -291,6 +288,14 @@ html:has(> .home-page)::-webkit-scrollbar {
     object-fit: cover;
 }
 
+@media (min-width: 901px) {
+    .home-services__panel {
+        min-height: min(644px, calc(100svh - 68px));
+        max-height: calc(100svh - 68px);
+        overflow-y: auto;
+    }
+}
+
 .home-hero {
     position: relative;
     overflow: hidden;
@@ -309,9 +314,10 @@ html:has(> .home-page)::-webkit-scrollbar {
     position: absolute;
     inset: 0;
     display: block;
+    pointer-events: none;
 }
 
-.home-hero__media img {
+.home-hero__media video {
     display: block;
     width: 100%;
     height: 100%;
@@ -565,11 +571,6 @@ html:has(> .home-page)::-webkit-scrollbar {
         max-width: none;
     }
 
-    .home-header__close {
-        display: none;
-        font: 28px/24px Arial, sans-serif;
-    }
-
     .home-header__nav {
         position: absolute;
         inset: 58px 0 auto;
@@ -589,14 +590,6 @@ html:has(> .home-page)::-webkit-scrollbar {
 
     .home-header.is-menu-open .home-header__nav {
         display: flex;
-    }
-
-    .home-header.is-menu-open .home-header__toggle img {
-        display: none;
-    }
-
-    .home-header.is-menu-open .home-header__close {
-        display: block;
     }
 
     .home-header__nav > a,
@@ -656,13 +649,6 @@ html:has(> .home-page)::-webkit-scrollbar {
     .home-hero__media {
         bottom: auto;
         height: 543px;
-    }
-
-    .home-hero__media::after {
-        content: '';
-        position: absolute;
-        inset: 402px -13px -30px;
-        background: linear-gradient(transparent, #000 82%), linear-gradient(transparent, #000 82%), linear-gradient(transparent, #000 82%), linear-gradient(transparent, #000 82%);
     }
 
     .home-hero__inner {

@@ -79,6 +79,16 @@
     animation-play-state: paused;
 }
 
+.home-reviews__row.is-scrollable {
+    overflow-x: auto;
+    cursor: grab;
+    scrollbar-width: none;
+}
+
+.home-reviews__row.is-scrollable::-webkit-scrollbar { display: none; }
+.home-reviews__row.is-scrollable .home-reviews__track { animation: none; }
+.home-reviews__row.is-dragging { cursor: grabbing; user-select: none; }
+
 .home-review {
     flex: 0 0 400px;
     width: 400px;
@@ -456,8 +466,8 @@
     place-items: center;
     width: 32px;
     height: 32px;
-    border-radius: 8px;
-    background: #ffffff0d;
+    border-radius: 50%;
+    background: #000;
 }
 
 .home-footer__badge {

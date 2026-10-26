@@ -1,26 +1,30 @@
 <section class="home-hero" aria-labelledby="home-title">
-    <img class="home-hero__backdrop" src="/img/home-backdrop.svg" alt="" aria-hidden="true">
-    <picture class="home-hero__media">
-        <source media="(max-width: 600px)" srcset="/img/home-hero-mobile.png">
-        <img src="/img/home-hero-v2.png" width="1440" height="730" alt="" fetchpriority="high">
-    </picture>
-    <div class="home-hero__inner">
-        <div class="home-hero__intro">
-            <h1 id="home-title">
-                <span>Дизайн и разработка</span>
-                <span>цифровых продуктов</span>
-                <span>под ключ</span>
-            </h1>
-            <p class="home-hero__subtitle">Проектируем и запускаем сайты, сервисы, приложения, Telegram-продукты, AI- и Web3-решения</p>
-            <a class="home-hero__cta" href="#contact">Обсудить проект</a>
+    <div class="home-hero__ambient" aria-hidden="true"></div>
+    <div class="home-hero__container">
+        <img class="home-hero__backdrop" src="/img/home-backdrop.svg" alt="" aria-hidden="true">
+        <div class="home-hero__media" aria-hidden="true">
+            <video autoplay muted loop playsinline preload="auto" poster="/img/home-hero-v2.png" width="1440" height="730" tabindex="-1">
+                <source src="/mockupBanner.MP4" type="video/mp4">
+            </video>
         </div>
-        <aside class="home-hero__audit" aria-labelledby="home-audit-title">
-            <div>
-                <h2 id="home-audit-title">Бесплатно<br>проведём аудит готового продукта</h2>
-                <p>или предложим варианты реализации вашей идеи</p>
+        <div class="home-hero__inner">
+            <div class="home-hero__intro">
+                <h1 id="home-title">
+                    <span>Дизайн и разработка</span>
+                    <span>цифровых продуктов</span>
+                    <span>под ключ</span>
+                </h1>
+                <p class="home-hero__subtitle">Проектируем и запускаем сайты, сервисы, приложения, Telegram-продукты, AI- и Web3-решения</p>
+                <a class="home-hero__cta" href="#contact">Обсудить проект</a>
             </div>
-            <a href="#contact">Обсудить проект<img src="/img/home-arrow.svg" alt=""></a>
-        </aside>
+            <aside class="home-hero__audit" aria-labelledby="home-audit-title">
+                <div>
+                    <h2 id="home-audit-title">Бесплатно<br>проведём аудит готового продукта</h2>
+                    <p>или предложим варианты реализации вашей идеи</p>
+                </div>
+                <a href="#contact">Обсудить проект<img src="/img/home-arrow.svg" alt=""></a>
+            </aside>
+        </div>
     </div>
 </section>
 
