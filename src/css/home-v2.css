@@ -401,7 +401,7 @@
     .home-team__portrait { height: 286px; }
     .home-team__leader h3 { font-size: 28px; }
     .home-team__quote { height: 216px; margin-top: 32px; }
-    .home-team__quote p { max-width: 357px; font-size: 16px; line-height: 22.67px; }
+    .home-team__quote p { max-width: 310px; font-size: 16px; line-height: 22.67px; }
     .home-team__quote cite { margin: 52px 58px 0 0; }
     .home-team__signature { top: 84px; right: -6px; left: auto; }
     .home-team__story { margin: 32px 0 0; }
