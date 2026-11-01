@@ -14,6 +14,7 @@ import { initHomeReviews } from '../js/components/home-reviews.js'
 import { initHomeHero } from '../js/components/home-hero.js'
 import { initHomeNavigation } from '../js/components/home-navigation.js'
 import { initHomeWhy } from '../js/components/home-why.js'
+import { initHomeProcess } from '../js/components/home-process.js'
 
 initHomeCases()
 initHomeCatalog()
@@ -22,6 +23,7 @@ initHomeEnding()
 initHomeReviews()
 initHomeHero()
 initHomeWhy()
+initHomeProcess()
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
