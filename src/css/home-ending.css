@@ -377,7 +377,7 @@
 
 .home-contact__consents input:checked { background: var(--home-accent); border-color: var(--home-accent); }
 .home-contact__consents input:checked::before { transform: rotate(45deg) scale(1); }
-.home-contact__form input:focus-visible { outline: 2px solid var(--home-accent); outline-offset: 4px; }
+.home-contact__consents input:focus-visible { outline: 2px solid var(--home-accent); outline-offset: 4px; }
 
 .home-contact__consents a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 

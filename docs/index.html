@@ -5,14 +5,15 @@
 	<link rel="icon" type="image/svg+xml" href="./favicon.svg">
 	<title>Atomic Studio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" crossorigin src="./js/home-98m-MB5x.js"></script>
+  <script type="module" crossorigin src="./js/home-C1JtNEVA.js"></script>
   <link rel="modulepreload" crossorigin href="./js/main-DvPXtN_g.js">
   <link rel="stylesheet" crossorigin href="./css/main-Ccsob-QC.css">
-  <link rel="stylesheet" crossorigin href="./css/home-8E1cZmQ8.css">
+  <link rel="stylesheet" crossorigin href="./css/home-vRrO4JZ0.css">
 </head>
 <body class="home-page">
 	<div class="maxwidth">
 		<header class="home-header" aria-label="Шапка сайта">
+		    <button class="home-header__backdrop" type="button" tabindex="-1" aria-label="Закрыть меню" hidden></button>
 		    <div class="home-header__bar">
 		        <a class="home-header__logo" href="./index.html" aria-label="Atomic — на главную">
 		            <picture>
@@ -55,8 +56,115 @@
 		            <a class="home-header__mobile-contact" href="#contact">Оставить заявку</a>
 		        </nav>
 		
-		        <a class="home-header__contact" href="#contact">Оставить заявку</a>
-		        <button class="home-header__toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="home-navigation" title="Меню">
+		        <div class="home-mobile-menu" id="home-mobile-menu" hidden>
+		            <div class="home-mobile-menu__categories" data-mobile-categories>
+		                <nav aria-label="Направления услуг">
+		                    <ul class="home-mobile-menu__list">
+		                        <li>
+		                            <button class="home-mobile-menu__category" type="button" data-mobile-service="development" aria-expanded="false" aria-controls="home-mobile-service-development">
+		                                <span class="home-mobile-menu__number">01</span>
+		                                <span>Разработка сайтов</span>
+		                                <img src="./img/home-service-arrow.svg" width="20" height="20" alt="">
+		                            </button>
+		                        </li>
+		                        <li>
+		                            <button class="home-mobile-menu__category" type="button" data-mobile-service="product" aria-expanded="false" aria-controls="home-mobile-service-product">
+		                                <span class="home-mobile-menu__number">02</span>
+		                                <span>Продуктовая разработка</span>
+		                                <img src="./img/home-service-arrow.svg" width="20" height="20" alt="">
+		                            </button>
+		                        </li>
+		                        <li>
+		                            <button class="home-mobile-menu__category" type="button" data-mobile-service="automation" aria-expanded="false" aria-controls="home-mobile-service-automation">
+		                                <span class="home-mobile-menu__number">03</span>
+		                                <span>AI, Web3 и автоматизация</span>
+		                                <img src="./img/home-service-arrow.svg" width="20" height="20" alt="">
+		                            </button>
+		                        </li>
+		                        <li>
+		                            <button class="home-mobile-menu__category" type="button" data-mobile-service="design" aria-expanded="false" aria-controls="home-mobile-service-design">
+		                                <span class="home-mobile-menu__number">04</span>
+		                                <span>Дизайн и контент</span>
+		                                <img src="./img/home-service-arrow.svg" width="20" height="20" alt="">
+		                            </button>
+		                        </li>
+		                        <li>
+		                            <button class="home-mobile-menu__category" type="button" data-mobile-service="growth" aria-expanded="false" aria-controls="home-mobile-service-growth">
+		                                <span class="home-mobile-menu__number">05</span>
+		                                <span>Продвижение и рост</span>
+		                                <img src="./img/home-service-arrow.svg" width="20" height="20" alt="">
+		                            </button>
+		                        </li>
+		                    </ul>
+		                </nav>
+		                <div class="home-mobile-menu__art" aria-hidden="true">
+		                    <img src="./img/home-services.png" width="1792" height="2400" alt="">
+		                </div>
+		            </div>
+		            <section class="home-mobile-menu__services" id="home-mobile-service-development" aria-labelledby="home-mobile-service-development-title" data-mobile-service-panel hidden>
+		                <h2 id="home-mobile-service-development-title" tabindex="-1">Разработка сайтов под ключ</h2>
+		                <p>Посадочные, корпоративные и e-commerce проекты на технологии, которая подходит задаче бизнеса.</p>
+		                <ul class="home-mobile-menu__links">
+		                    <li><a href="#contact">Веб-разработка под ключ<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Корпоративные сайты<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Интернет-магазины<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Лендинги<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Разработка на WordPress<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Разработка на 1С-Битрикс<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Laravel-разработка<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                </ul>
+		            </section>
+		            <section class="home-mobile-menu__services" id="home-mobile-service-product" aria-labelledby="home-mobile-service-product-title" data-mobile-service-panel hidden>
+		                <h2 id="home-mobile-service-product-title" tabindex="-1">Продуктовая разработка</h2>
+		                <p>Сервисы, приложения и внутренние системы со сложной бизнес-логикой.</p>
+		                <ul class="home-mobile-menu__links">
+		                    <li><a href="#contact">Сервисы и платформы<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Кастомные CRM-системы<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Мобильные приложения<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Telegram Mini Apps<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Чат-боты для бизнеса<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Внедрение и разработка Битрикс24<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                </ul>
+		            </section>
+		            <section class="home-mobile-menu__services" id="home-mobile-service-automation" aria-labelledby="home-mobile-service-automation-title" data-mobile-service-panel hidden>
+		                <h2 id="home-mobile-service-automation-title" tabindex="-1">AI, Web3 и автоматизация</h2>
+		                <p>Подключаем технологии там, где они экономят время или создают новый доход</p>
+		                <ul class="home-mobile-menu__links">
+		                    <li><a href="#contact">AI-агенты<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">AI &amp; Machine Learning<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Интеграции и автоматизация<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Blockchain<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Смарт-контракты<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Web3-сервисы<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                </ul>
+		            </section>
+		            <section class="home-mobile-menu__services" id="home-mobile-service-design" aria-labelledby="home-mobile-service-design-title" data-mobile-service-panel hidden>
+		                <h2 id="home-mobile-service-design-title" tabindex="-1">Дизайн и контент</h2>
+		                <p>Переводим сложный продукт в ясный интерфейс и сильный визуальный образ</p>
+		                <ul class="home-mobile-menu__links">
+		                    <li><a href="#contact">UI/UX-дизайн<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Веб-дизайн<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Айдентика<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">UX-аудит<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Motion-дизайн<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">AI-видеопродакшн<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                </ul>
+		            </section>
+		            <section class="home-mobile-menu__services" id="home-mobile-service-growth" aria-labelledby="home-mobile-service-growth-title" data-mobile-service-panel hidden>
+		                <h2 id="home-mobile-service-growth-title" tabindex="-1">Продвижение и рост</h2>
+		                <p>Помогаем продукту выйти на рынок, стать заметным и системно привлекать клиентов</p>
+		                <ul class="home-mobile-menu__links">
+		                    <li><a href="#contact">Digital-маркетинг<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">SEO<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Контекстная реклама<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">E-mail маркетинг<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">SMM и контент<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                    <li><a href="#contact">Мерч и бренд-материалы<img src="./img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+		                </ul>
+		            </section>
+		        </div>
+		<a class="home-header__contact" href="#contact">Оставить заявку</a>
+		        <button class="home-header__toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="home-mobile-menu" title="Меню">
 		            <img src="./img/home-menu.svg" alt="">
 		        </button>
 		    </div>
@@ -165,230 +273,230 @@
 		        </a>
 		    </div>
 		</section>
-		<section class="home-catalog" id="services" aria-labelledby="home-catalog-title">
-		    <div class="home-section-heading">
-		        <h2 id="home-catalog-title">От идеи &mdash;<br>до <span>работающего</span> продукта</h2>
-		        <div class="home-section-note">
-		            <p>Не продаём отдельные часы специалистов. Собираем под задачу продуктовую команду и ведём проект от первой гипотезы до запуска</p>
-		        </div>
-		    </div>
-		    <div class="home-catalog__scroll">
-		        <div class="home-catalog__viewport">
-		            <div class="home-catalog__cards" id="home-catalog-slides" tabindex="0" role="region" aria-roledescription="карусель" aria-label="Направления услуг">
-		                <article class="home-service-card home-service-card--development" aria-labelledby="service-development-title">
-		                    <div class="home-service-card__intro">
-		                        <h3 id="service-development-title">Разработка</h3>
-		                        <p>Запускаем продукт целиком и берём ответственность за результат</p>
-		                    </div>
-		                    <ul class="home-service-card__links">
-		                        <li><a href="#contact"><span>Веб-разработка</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Корпоративные сайты</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Интернет-магазины</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Лендинги</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Сервисы и платформы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>CRM-системы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Мобильные приложения</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Telegram Mini Apps</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Чат-боты</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                    </ul>
-		                </article>
-		                <article class="home-service-card home-service-card--product" aria-labelledby="service-product-title">
-		                    <div class="home-service-card__intro">
-		                        <h3 id="service-product-title">Продуктовая разработка</h3>
-		                        <p>Сервисы, приложения и внутренние системы со сложной бизнес-логикой.</p>
-		                    </div>
-		                    <ul class="home-service-card__links">
-		                        <li><a href="#contact"><span>Сервисы и платформы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Кастомные CRM-системы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Мобильные приложения</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Telegram Mini Apps</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Чат-боты для бизнеса</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Внедрение и разработка Битрикс24</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                    </ul>
-		                </article>
-		                <article class="home-service-card home-service-card--automation" aria-labelledby="service-automation-title">
-		                    <div class="home-service-card__intro">
-		                        <h3 id="service-automation-title">AI, Web3 и автоматизация</h3>
-		                        <p>Подключаем технологии там, где они экономят время или создают новый доход</p>
-		                    </div>
-		                    <ul class="home-service-card__links">
-		                        <li><a href="#contact"><span>AI-агенты</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>AI &amp; Machine Learning</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Интеграции и автоматизация</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Blockchain</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Смарт-контракты</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Web3-сервисы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                    </ul>
-		                </article>
-		                <article class="home-service-card home-service-card--design" aria-labelledby="service-design-title">
-		                    <div class="home-service-card__intro">
-		                        <h3 id="service-design-title">Дизайн и контент</h3>
-		                        <p>Переводим сложный продукт в ясный интерфейс и сильный визуальный образ</p>
-		                    </div>
-		                    <ul class="home-service-card__links">
-		                        <li><a href="#contact"><span>UI/UX-дизайн</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Веб-дизайн</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Айдентика</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>UX-аудит</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Motion-дизайн</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>AI-видеопродакшн</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                    </ul>
-		                </article>
-		                <article class="home-service-card home-service-card--growth" aria-labelledby="service-growth-title">
-		                    <div class="home-service-card__intro">
-		                        <h3 id="service-growth-title">Рост и экосистема</h3>
-		                        <p>Помогаем продукту выйти на рынок, стать заметным и системно привлекать клиентов</p>
-		                    </div>
-		                    <ul class="home-service-card__links">
-		                        <li><a href="#contact"><span>Digital-маркетинг</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>SEO</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Контекстная реклама</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>E-mail маркетинг</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>SMM и контент</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                        <li><a href="#contact"><span>Мерч и бренд-материалы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
-		                    </ul>
-		                </article>
-		            </div>
-		            <div class="home-catalog__controls" role="group" aria-label="Переключение направлений услуг">
-		                <button class="home-catalog__previous" type="button" aria-label="Предыдущее направление" aria-controls="home-catalog-slides" disabled>
-		                    <img src="./img/home-team-prev.svg" alt="">
-		                </button>
-		                <div class="home-scroll-progress" data-scroll-progress=".home-catalog__cards" aria-hidden="true"><span></span></div>
-		                <button class="home-catalog__next" type="button" aria-label="Следующее направление" aria-controls="home-catalog-slides">
-		                    <img src="./img/home-team-next.svg" alt="">
-		                </button>
-		            </div>
-		        </div>
-		    </div>
-		</section>
-		<section class="home-cases" id="cases" aria-labelledby="home-cases-title">
-		    <div class="home-cases__intro">
-		        <h2 id="home-cases-title">Мы накопили большой<br>опыт в разработке<br><span>Кастомных решений</span></h2>
-		        <div class="home-cases__browse">
-		            <nav class="home-cases__categories" aria-label="Категории проектов">
-		                <a href="projects.html"><span>Индивидуальные решения</span><sup>11</sup></a>
-		                <a href="projects.html"><span>Web3</span><sup>2</sup></a>
-		                <a href="projects.html"><span>Интернет магазины</span><sup>10</sup></a>
-		                <a href="projects.html"><span>Web-сайты</span><sup>1</sup></a>
-		                <a href="projects.html"><span>Retail</span><sup>15</sup></a>
-		                <a href="projects.html"><span>FMCG</span><sup>8</sup></a>
-		            </nav>
-		            <a class="home-cases__all" href="projects.html">Смотреть все проекты</a>
-		        </div>
-		    </div>
-		    <div class="home-cases__gallery" role="region" aria-label="Избранные проекты">
-		        <div class="home-cases__slides">
-		            <article class="home-case">
-		                <div class="home-case__media">
-		                    <div class="home-case__images" aria-hidden="true">
-		                        <img src="./img/home-case-1.png" alt="">
-		                    </div>
-		                    <div class="home-case__tags">
-		                        <span class="home-case__tag">
-		                            <span class="home-case__bag"><img src="./img/home-case-bag.svg" alt=""></span>
-		                            Интернет-магазин
-		                        </span>
-		                        <span class="home-case__tag">
-		                            <span class="home-case__bitrix"><img src="./img/home-case-bitrix.png" alt=""></span>
-		                            1c bitrix
-		                        </span>
-		                    </div>
-		                    <div class="home-case__metrics">
-		                        <div class="home-case__metric">
-		                            <img src="./img/home-case-star.svg" alt="">
-		                            <p><strong>Увеличение продаж:</strong><br>+260% в первый квартал после запуска</p>
-		                        </div>
-		                        <div class="home-case__metric">
-		                            <img src="./img/home-case-star.svg" alt="">
-		                            <p><strong>Рост конверсий:</strong><br>+145% по сравнению с предыдущим сайтом</p>
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="home-case__footer">
-		                    <div class="home-case__copy">
-		                        <h3><a href="detail.html">В заголовке максимум 40 знаков писать</a></h3>
-		                        <p>Искусственный интеллект меняет рынок труда. Автоматизация вытесняет рутину, но создаёт новые профессии. Какие навыки будут в цене завтра?</p>
-		                    </div>
-		                    <a class="home-case__link" href="detail.html" aria-label="Открыть проект: В заголовке максимум 40 знаков писать">
-		                        <span>Сайт</span><span class="home-button-arrow" aria-hidden="true"></span>
-		                    </a>
-		                </div>
-		            </article>
-		            <article class="home-case">
-		                <div class="home-case__media">
-		                    <div class="home-case__images" aria-hidden="true">
-		                        <img src="./img/home-case-1.png" alt="">
-		                    </div>
-		                    <div class="home-case__tags">
-		                        <span class="home-case__tag">
-		                            <span class="home-case__bag"><img src="./img/home-case-bag.svg" alt=""></span>
-		                            Интернет-магазин
-		                        </span>
-		                        <span class="home-case__tag">
-		                            <span class="home-case__bitrix"><img src="./img/home-case-bitrix.png" alt=""></span>
-		                            1c bitrix
-		                        </span>
-		                    </div>
-		                    <div class="home-case__metrics">
-		                        <div class="home-case__metric">
-		                            <img src="./img/home-case-star.svg" alt="">
-		                            <p><strong>Увеличение продаж:</strong><br>+260% в первый квартал после запуска</p>
-		                        </div>
-		                        <div class="home-case__metric">
-		                            <img src="./img/home-case-star.svg" alt="">
-		                            <p><strong>Рост конверсий:</strong><br>+145% по сравнению с предыдущим сайтом</p>
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="home-case__footer">
-		                    <div class="home-case__copy">
-		                        <h3><a href="detail.html">“M-Dental” сайт стоматологии</a></h3>
-		                        <p>Сайт интеграционного оператора железнодорожных транзитных сервисов между Китаем и Европой</p>
-		                    </div>
-		                    <a class="home-case__link" href="detail.html" aria-label="Открыть проект: “M-Dental” сайт стоматологии">
-		                        <span>Сайт</span><span class="home-button-arrow" aria-hidden="true"></span>
-		                    </a>
-		                </div>
-		            </article>
-		            <article class="home-case">
-		                <div class="home-case__media">
-		                    <div class="home-case__images" aria-hidden="true">
-		                        <img src="./img/home-case-1.png" alt="">
-		                    </div>
-		                    <div class="home-case__tags">
-		                        <span class="home-case__tag">
-		                            <span class="home-case__bag"><img src="./img/home-case-bag.svg" alt=""></span>
-		                            Интернет-магазин
-		                        </span>
-		                        <span class="home-case__tag">
-		                            <span class="home-case__bitrix"><img src="./img/home-case-bitrix.png" alt=""></span>
-		                            1c bitrix
-		                        </span>
-		                    </div>
-		                    <div class="home-case__metrics">
-		                        <div class="home-case__metric">
-		                            <img src="./img/home-case-star.svg" alt="">
-		                            <p><strong>Максимум писать 23 знака.</strong><br>Максимум поместится 45 знаков, учитывайте это!</p>
-		                        </div>
-		                        <div class="home-case__metric">
-		                            <img src="./img/home-case-star-small.svg" alt="">
-		                            <p><strong>Максимум писать 23 знака.</strong><br>Максимум поместится 45 знаков, учитывайте это!</p>
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="home-case__footer">
-		                    <div class="home-case__copy">
-		                        <h3><a href="detail.html">“M-Dental” сайт стоматологии</a></h3>
-		                        <p>Сайт интеграционного оператора железнодорожных транзитных сервисов между Китаем и Европой</p>
-		                    </div>
-		                    <a class="home-case__link" href="detail.html" aria-label="Открыть проект: “M-Dental” сайт стоматологии">
-		                        <span>Сайт</span><span class="home-button-arrow" aria-hidden="true"></span>
-		                    </a>
-		                </div>
-		            </article>
-		        </div>
-		    </div>
-		</section>
+		<div class="home-catalog__scroll">
+			<div class="home-catalog__viewport">
+				<section class="home-catalog" id="services" aria-labelledby="home-catalog-title">
+				    <div class="home-section-heading">
+				        <h2 id="home-catalog-title">От идеи &mdash;<br>до <span>работающего</span> продукта</h2>
+				        <div class="home-section-note">
+				            <p>Не продаём отдельные часы специалистов. Собираем под задачу продуктовую команду и ведём проект от первой гипотезы до запуска</p>
+				        </div>
+				    </div>
+				    <div class="home-catalog__cards" id="home-catalog-slides" tabindex="0" role="region" aria-roledescription="карусель" aria-label="Направления услуг">
+				        <article class="home-service-card home-service-card--development" aria-labelledby="service-development-title">
+				            <div class="home-service-card__intro">
+				                <h3 id="service-development-title">Разработка</h3>
+				                <p>Запускаем продукт целиком и берём ответственность за результат</p>
+				            </div>
+				            <ul class="home-service-card__links">
+				                <li><a href="#contact"><span>Веб-разработка</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Корпоративные сайты</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Интернет-магазины</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Лендинги</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Сервисы и платформы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>CRM-системы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Мобильные приложения</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Telegram Mini Apps</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Чат-боты</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				            </ul>
+				        </article>
+				        <article class="home-service-card home-service-card--product" aria-labelledby="service-product-title">
+				            <div class="home-service-card__intro">
+				                <h3 id="service-product-title">Продуктовая разработка</h3>
+				                <p>Сервисы, приложения и внутренние системы со сложной бизнес-логикой.</p>
+				            </div>
+				            <ul class="home-service-card__links">
+				                <li><a href="#contact"><span>Сервисы и платформы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Кастомные CRM-системы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Мобильные приложения</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Telegram Mini Apps</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Чат-боты для бизнеса</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Внедрение и разработка Битрикс24</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				            </ul>
+				        </article>
+				        <article class="home-service-card home-service-card--automation" aria-labelledby="service-automation-title">
+				            <div class="home-service-card__intro">
+				                <h3 id="service-automation-title">AI, Web3 и автоматизация</h3>
+				                <p>Подключаем технологии там, где они экономят время или создают новый доход</p>
+				            </div>
+				            <ul class="home-service-card__links">
+				                <li><a href="#contact"><span>AI-агенты</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>AI &amp; Machine Learning</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Интеграции и автоматизация</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Blockchain</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Смарт-контракты</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Web3-сервисы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				            </ul>
+				        </article>
+				        <article class="home-service-card home-service-card--design" aria-labelledby="service-design-title">
+				            <div class="home-service-card__intro">
+				                <h3 id="service-design-title">Дизайн и контент</h3>
+				                <p>Переводим сложный продукт в ясный интерфейс и сильный визуальный образ</p>
+				            </div>
+				            <ul class="home-service-card__links">
+				                <li><a href="#contact"><span>UI/UX-дизайн</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Веб-дизайн</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Айдентика</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>UX-аудит</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Motion-дизайн</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>AI-видеопродакшн</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				            </ul>
+				        </article>
+				        <article class="home-service-card home-service-card--growth" aria-labelledby="service-growth-title">
+				            <div class="home-service-card__intro">
+				                <h3 id="service-growth-title">Рост и экосистема</h3>
+				                <p>Помогаем продукту выйти на рынок, стать заметным и системно привлекать клиентов</p>
+				            </div>
+				            <ul class="home-service-card__links">
+				                <li><a href="#contact"><span>Digital-маркетинг</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>SEO</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Контекстная реклама</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>E-mail маркетинг</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>SMM и контент</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				                <li><a href="#contact"><span>Мерч и бренд-материалы</span><img class="home-service-card__arrow" src="./img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+				            </ul>
+				        </article>
+				    </div>
+				    <div class="home-catalog__controls" role="group" aria-label="Переключение направлений услуг">
+				        <button class="home-catalog__previous" type="button" aria-label="Предыдущее направление" aria-controls="home-catalog-slides" disabled>
+				            <img src="./img/home-team-prev.svg" alt="">
+				        </button>
+				        <div class="home-scroll-progress" data-scroll-progress=".home-catalog__cards" aria-hidden="true"><span></span></div>
+				        <button class="home-catalog__next" type="button" aria-label="Следующее направление" aria-controls="home-catalog-slides">
+				            <img src="./img/home-team-next.svg" alt="">
+				        </button>
+				    </div>
+				</section>
+				<section class="home-cases" id="cases" aria-labelledby="home-cases-title">
+				    <div class="home-cases__intro">
+				        <h2 id="home-cases-title">Мы накопили большой<br>опыт в разработке<br><span>Кастомных решений</span></h2>
+				        <div class="home-cases__browse">
+				            <nav class="home-cases__categories" aria-label="Категории проектов">
+				                <a href="projects.html"><span>Индивидуальные решения</span><sup>11</sup></a>
+				                <a href="projects.html"><span>Web3</span><sup>2</sup></a>
+				                <a href="projects.html"><span>Интернет магазины</span><sup>10</sup></a>
+				                <a href="projects.html"><span>Web-сайты</span><sup>1</sup></a>
+				                <a href="projects.html"><span>Retail</span><sup>15</sup></a>
+				                <a href="projects.html"><span>FMCG</span><sup>8</sup></a>
+				            </nav>
+				            <a class="home-cases__all" href="projects.html">Смотреть все проекты</a>
+				        </div>
+				    </div>
+				    <div class="home-cases__gallery" role="region" aria-label="Избранные проекты">
+				        <div class="home-cases__slides">
+				            <article class="home-case">
+				                <div class="home-case__media">
+				                    <div class="home-case__images" aria-hidden="true">
+				                        <img src="./img/home-case-1.png" alt="">
+				                    </div>
+				                    <div class="home-case__tags">
+				                        <span class="home-case__tag">
+				                            <span class="home-case__bag"><img src="./img/home-case-bag.svg" alt=""></span>
+				                            Интернет-магазин
+				                        </span>
+				                        <span class="home-case__tag">
+				                            <span class="home-case__bitrix"><img src="./img/home-case-bitrix.png" alt=""></span>
+				                            1c bitrix
+				                        </span>
+				                    </div>
+				                    <div class="home-case__metrics">
+				                        <div class="home-case__metric">
+				                            <img src="./img/home-case-star.svg" alt="">
+				                            <p><strong>Увеличение продаж:</strong><br>+260% в первый квартал после запуска</p>
+				                        </div>
+				                        <div class="home-case__metric">
+				                            <img src="./img/home-case-star.svg" alt="">
+				                            <p><strong>Рост конверсий:</strong><br>+145% по сравнению с предыдущим сайтом</p>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="home-case__footer">
+				                    <div class="home-case__copy">
+				                        <h3><a href="detail.html">В заголовке максимум 40 знаков писать</a></h3>
+				                        <p>Искусственный интеллект меняет рынок труда. Автоматизация вытесняет рутину, но создаёт новые профессии. Какие навыки будут в цене завтра?</p>
+				                    </div>
+				                    <a class="home-case__link" href="detail.html" aria-label="Открыть проект: В заголовке максимум 40 знаков писать">
+				                        <span>Сайт</span><span class="home-button-arrow" aria-hidden="true"></span>
+				                    </a>
+				                </div>
+				            </article>
+				            <article class="home-case">
+				                <div class="home-case__media">
+				                    <div class="home-case__images" aria-hidden="true">
+				                        <img src="./img/home-case-1.png" alt="">
+				                    </div>
+				                    <div class="home-case__tags">
+				                        <span class="home-case__tag">
+				                            <span class="home-case__bag"><img src="./img/home-case-bag.svg" alt=""></span>
+				                            Интернет-магазин
+				                        </span>
+				                        <span class="home-case__tag">
+				                            <span class="home-case__bitrix"><img src="./img/home-case-bitrix.png" alt=""></span>
+				                            1c bitrix
+				                        </span>
+				                    </div>
+				                    <div class="home-case__metrics">
+				                        <div class="home-case__metric">
+				                            <img src="./img/home-case-star.svg" alt="">
+				                            <p><strong>Увеличение продаж:</strong><br>+260% в первый квартал после запуска</p>
+				                        </div>
+				                        <div class="home-case__metric">
+				                            <img src="./img/home-case-star.svg" alt="">
+				                            <p><strong>Рост конверсий:</strong><br>+145% по сравнению с предыдущим сайтом</p>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="home-case__footer">
+				                    <div class="home-case__copy">
+				                        <h3><a href="detail.html">“M-Dental” сайт стоматологии</a></h3>
+				                        <p>Сайт интеграционного оператора железнодорожных транзитных сервисов между Китаем и Европой</p>
+				                    </div>
+				                    <a class="home-case__link" href="detail.html" aria-label="Открыть проект: “M-Dental” сайт стоматологии">
+				                        <span>Сайт</span><span class="home-button-arrow" aria-hidden="true"></span>
+				                    </a>
+				                </div>
+				            </article>
+				            <article class="home-case">
+				                <div class="home-case__media">
+				                    <div class="home-case__images" aria-hidden="true">
+				                        <img src="./img/home-case-1.png" alt="">
+				                    </div>
+				                    <div class="home-case__tags">
+				                        <span class="home-case__tag">
+				                            <span class="home-case__bag"><img src="./img/home-case-bag.svg" alt=""></span>
+				                            Интернет-магазин
+				                        </span>
+				                        <span class="home-case__tag">
+				                            <span class="home-case__bitrix"><img src="./img/home-case-bitrix.png" alt=""></span>
+				                            1c bitrix
+				                        </span>
+				                    </div>
+				                    <div class="home-case__metrics">
+				                        <div class="home-case__metric">
+				                            <img src="./img/home-case-star.svg" alt="">
+				                            <p><strong>Максимум писать 23 знака.</strong><br>Максимум поместится 45 знаков, учитывайте это!</p>
+				                        </div>
+				                        <div class="home-case__metric">
+				                            <img src="./img/home-case-star-small.svg" alt="">
+				                            <p><strong>Максимум писать 23 знака.</strong><br>Максимум поместится 45 знаков, учитывайте это!</p>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="home-case__footer">
+				                    <div class="home-case__copy">
+				                        <h3><a href="detail.html">“M-Dental” сайт стоматологии</a></h3>
+				                        <p>Сайт интеграционного оператора железнодорожных транзитных сервисов между Китаем и Европой</p>
+				                    </div>
+				                    <a class="home-case__link" href="detail.html" aria-label="Открыть проект: “M-Dental” сайт стоматологии">
+				                        <span>Сайт</span><span class="home-button-arrow" aria-hidden="true"></span>
+				                    </a>
+				                </div>
+				            </article>
+				        </div>
+				    </div>
+				</section>
+			</div>
+		</div>
 		<section class="home-why" id="why-us" aria-labelledby="home-why-title">
 		    <div class="home-section-heading">
 		        <h2 id="home-why-title">Работаем как часть<br><span>вашей команды</span></h2>
@@ -940,6 +1048,6 @@
 					</div>
 				</div>
 	</div>
-
+
 </body>
 </html>

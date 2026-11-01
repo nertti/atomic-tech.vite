@@ -1,0 +1,31 @@
+<div class="home-mobile-menu" id="home-mobile-menu" hidden>
+    <div class="home-mobile-menu__categories" data-mobile-categories>
+        <nav aria-label="Направления услуг">
+            <ul class="home-mobile-menu__list">
+                {{#each mobileServiceGroups}}
+                <li>
+                    <button class="home-mobile-menu__category" type="button" data-mobile-service="{{variant}}" aria-expanded="false" aria-controls="home-mobile-service-{{variant}}">
+                        <span class="home-mobile-menu__number">{{number}}</span>
+                        <span>{{label}}</span>
+                        <img src="/img/home-service-arrow.svg" width="20" height="20" alt="">
+                    </button>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+        <div class="home-mobile-menu__art" aria-hidden="true">
+            <img src="/img/home-services.png" width="1792" height="2400" alt="">
+        </div>
+    </div>
+    {{#each mobileServiceGroups}}
+    <section class="home-mobile-menu__services" id="home-mobile-service-{{variant}}" aria-labelledby="home-mobile-service-{{variant}}-title" data-mobile-service-panel hidden>
+        <h2 id="home-mobile-service-{{variant}}-title" tabindex="-1">{{heading}}</h2>
+        <p>{{description}}</p>
+        <ul class="home-mobile-menu__links">
+            {{#each items}}
+            <li><a href="#contact">{{this}}<img src="/img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
+            {{/each}}
+        </ul>
+    </section>
+    {{/each}}
+</div>

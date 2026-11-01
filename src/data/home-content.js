@@ -55,6 +55,22 @@ export const serviceGroups = [
     },
 ]
 
+export const mobileServiceGroups = serviceGroups.map((group, index) => {
+    const labels = ['Разработка сайтов', 'Продуктовая разработка', 'AI, Web3 и автоматизация', 'Дизайн и контент', 'Продвижение и рост']
+    return {
+        ...group,
+        number: String(index + 1).padStart(2, '0'),
+        label: labels[index],
+        heading: index === 0 ? 'Разработка сайтов под ключ' : labels[index],
+        description: index === 0
+            ? 'Посадочные, корпоративные и e-commerce проекты на технологии, которая подходит задаче бизнеса.'
+            : group.description,
+        items: index === 0
+            ? ['Веб-разработка под ключ', 'Корпоративные сайты', 'Интернет-магазины', 'Лендинги', 'Разработка на WordPress', 'Разработка на 1С-Битрикс', 'Laravel-разработка']
+            : group.items,
+    }
+})
+
 export const homeCases = [
     {
         title: 'В заголовке максимум 40 знаков писать',

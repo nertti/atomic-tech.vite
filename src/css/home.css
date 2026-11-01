@@ -603,70 +603,7 @@ html:has(> .home-page)::-webkit-scrollbar {
     }
 
     .home-header__nav {
-        position: absolute;
-        inset: 58px 0 auto;
         display: none;
-        align-items: stretch;
-        flex-direction: column;
-        gap: 0;
-        max-height: calc(100svh - 130px);
-        overflow: auto;
-        padding: 16px;
-        border-radius: 16px;
-        background: #0f1d1b;
-        color: var(--home-paper);
-        font-family: 'Manrope', sans-serif;
-        font-size: 16px;
-    }
-
-    .home-header.is-menu-open .home-header__nav {
-        display: flex;
-    }
-
-    .home-header__nav > a,
-    .home-services > summary {
-        min-height: 48px;
-        padding: 14px 8px;
-        color: var(--home-paper);
-    }
-
-    .home-services > summary > img {
-        filter: invert(1);
-    }
-
-    .home-services[open]::before {
-        display: none;
-    }
-
-    .home-services__panel {
-        position: static;
-        display: block;
-        min-height: 0;
-        padding: 8px 0 16px;
-        border-radius: 0;
-    }
-
-    .home-services__categories a {
-        min-height: 54px;
-        padding-inline: 8px;
-        font-size: 14px;
-    }
-
-    .home-services__categories li > img {
-        margin-left: 8px;
-    }
-
-    .home-services__content,
-    .home-services__image {
-        display: none;
-    }
-
-    .home-header__nav > .home-header__mobile-contact {
-        display: grid;
-        width: 100%;
-        margin-top: 8px;
-        background: var(--home-paper);
-        color: var(--home-ink);
     }
 
     .home-hero {

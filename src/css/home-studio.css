@@ -263,7 +263,9 @@
 .home-team__portrait {
     position: relative;
     width: 100%;
-    height: 286px;
+    max-width: 336px;
+    height: auto;
+    aspect-ratio: 336 / 277;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -273,7 +275,7 @@
     top: -5.943%;
     left: -0.098%;
     width: 100.689%;
-    height: 122.517%;
+    height: auto;
     max-width: none;
 }
 

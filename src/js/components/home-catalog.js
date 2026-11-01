@@ -1,8 +1,8 @@
 import { enableRailDrag } from './horizontal-rail.js'
 
 function pinCatalog(catalog, rail, reducedMotion, mobile) {
-    const track = catalog.querySelector('.home-catalog__scroll')
-    const viewport = catalog.querySelector('.home-catalog__viewport')
+    const track = catalog.closest('.home-catalog__scroll')
+    const viewport = track.querySelector('.home-catalog__viewport')
     const header = document.querySelector('.home-header')
     let pin = null
     let expectedLeft = rail.scrollLeft
@@ -21,10 +21,12 @@ function pinCatalog(catalog, rail, reducedMotion, mobile) {
     function measure() {
         const distance = Math.max(0, rail.scrollWidth - rail.clientWidth)
         const top = (header?.getBoundingClientRect().bottom ?? 0) + 16
-        const height = viewport.offsetHeight
-        // A tall card must remain fully readable on short and landscape screens.
+        const style = getComputedStyle(catalog)
+        const paddingTop = parseFloat(style.paddingTop)
+        const height = catalog.offsetHeight - paddingTop - parseFloat(style.paddingBottom)
+        // Pin the heading and cards together only when the whole group fits.
         pin = !mobile.matches && distance > 1 && height <= window.innerHeight - top - 16
-            ? { top, distance }
+            ? { top: top - paddingTop, distance }
             : null
         track.classList.toggle('is-pinned', Boolean(pin))
         if (!pin) {
@@ -32,8 +34,9 @@ function pinCatalog(catalog, rail, reducedMotion, mobile) {
             track.style.removeProperty('--catalog-scroll-top')
             return
         }
-        track.style.setProperty('--catalog-scroll-height', `${height + distance}px`)
-        track.style.setProperty('--catalog-scroll-top', `${top}px`)
+        // Keep the next section beside the controls while the extra scroll is consumed.
+        track.style.setProperty('--catalog-scroll-height', `${viewport.offsetHeight + distance}px`)
+        track.style.setProperty('--catalog-scroll-top', `${pin.top}px`)
         syncFromPage()
     }
 
@@ -49,6 +52,16 @@ function pinCatalog(catalog, rail, reducedMotion, mobile) {
         expectedLeft = rail.scrollLeft
         window.scrollTo({ top: start + expectedLeft, behavior: 'instant' })
     }, { passive: true })
+
+    document.addEventListener('click', event => {
+        if (!pin || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return
+        const link = event.target.closest('a[href]')
+        if (!link || link.origin !== location.origin || link.pathname !== location.pathname || link.search !== location.search) return
+        const target = document.getElementById(link.hash.slice(1))
+        if (!target || catalog.contains(target) || !viewport.contains(target)) return
+        // Re-align an anchor after native navigation has released the sticky group.
+        requestAnimationFrame(() => target.scrollIntoView({ block: 'start', behavior: 'instant' }))
+    })
 
     const resize = new ResizeObserver(measure)
     resize.observe(viewport)

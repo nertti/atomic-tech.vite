@@ -11,8 +11,12 @@
 		{{> home-header }}
 		{{> home-hero }}
 		{{> home-request }}
-		{{> home-catalog }}
-		{{> home-cases }}
+		<div class="home-catalog__scroll">
+			<div class="home-catalog__viewport">
+				{{> home-catalog }}
+				{{> home-cases }}
+			</div>
+		</div>
 		{{> home-why }}
 		{{> home-process }}
 		{{> home-team }}
