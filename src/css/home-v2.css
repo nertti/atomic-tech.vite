@@ -102,7 +102,9 @@
 .home-catalog__controls[hidden] { display: none; }
 .home-catalog__controls .home-scroll-progress { margin: 0; }
 .home-catalog__controls button { display: none; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid #303030; border-radius: 50%; background: transparent; cursor: pointer; }
-.home-catalog__controls button:hover:not(:disabled) { background: #164e51; }
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-catalog__controls button:hover:not(:disabled) { background: #164e51; }
+}
 .home-catalog__controls button:disabled { opacity: .3; cursor: default; }
 .home-catalog__controls img { filter: brightness(0) invert(1); }
 .home-catalog__next img { transform: scaleX(-1); }
@@ -176,7 +178,7 @@
 .home-why-card--featured { grid-row: span 2; border-radius: 28px; background: #021011 url('/img/home-why-featured-v2.svg') center / 100% 100%; }
 .home-why-card--featured h3 { font-size: 32px; line-height: 38px; letter-spacing: -.02em; }
 .home-why-card--featured h3 span { display: inline; }
-@media (hover: hover) {
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
     .home-why-card:not(.home-why-card--featured) { isolation: isolate; cursor: pointer; transition: color var(--hover-duration) var(--hover-easing); }
     .home-why-card:not(.home-why-card--featured)::before { content: ''; position: absolute; z-index: -1; inset: 0; border-radius: 15px; background: var(--home-ink) url('/img/home-why-hover-v2.svg') center / 100% 100% no-repeat; opacity: 0; pointer-events: none; transition: opacity var(--hover-duration) var(--hover-easing); }
     .home-why-card:not(.home-why-card--featured):hover { color: var(--home-paper); }
@@ -224,8 +226,10 @@
 .home-blog__rail.is-dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
 .home-blog__rail.is-dragging .home-blog-card { cursor: grabbing; }
 .home-blog__link { display: flex; grid-area: 1 / 1; align-self: end; align-items: center; justify-content: space-between; gap: 16px; width: 204px; min-height: 56px; padding: 12px 24px; margin: 0; border: 1px solid var(--home-muted); border-radius: 100px; color: var(--home-ink); font-size: 16px; }
-.home-blog__link img { flex: none; transform: scaleX(-1); }
-.home-blog__link:hover { background: #ddd; text-decoration: none; }
+.home-blog__link:is(:hover, :focus-visible) { text-decoration: none; }
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-blog__link:is(:hover, :focus-visible) { border-color: var(--home-button-hover); color: var(--home-button-hover); }
+}
 .home-contact { padding: 100px var(--home-gutter); }
 .home-contact__background { grid-template-columns: minmax(0, 526fr) minmax(0, 577fr); gap: 56px; padding: 48px 57px 48px 32px; background-image: url('/img/home-contact-background-v2.svg'); }
 .home-contact__intro h2 { max-width: 526px; font-size: 40px; line-height: 48px; letter-spacing: -1.2px; }
@@ -434,6 +438,21 @@
     .home-footer__idea p { margin-top: 16px; }
     .home-footer__social { position: relative; inset: auto; margin-top: 32px; }
     .home-footer__badge { top: auto; bottom: -23px; left: max(76.332px, calc(100% - 313.668px)); }
+}
+
+/* Tablet hero from frame 1950: centered copy over the full-height video. */
+@media (min-width: 700px) and (max-width: 1100px) {
+    .home-hero { --home-hero-media-height: 667px; }
+    .home-hero__media { left: 50%; right: auto; width: 1447px; transform: translateX(-50%); }
+    .home-hero__media::before, .home-hero__media::after { display: none; }
+    .home-hero__inner { display: flex; align-items: center; justify-content: center; min-height: 630px; padding: 0 16px; }
+    .home-hero__intro { align-self: auto; display: flex; flex-direction: column; align-items: center; width: 514px; padding: 24px; border-radius: 16px; background: rgb(235 237 240 / 90%); backdrop-filter: blur(4px); text-align: center; }
+    .home-hero h1 { width: 364px; max-width: 100%; color: var(--home-ink); font-size: 32px; line-height: 40px; letter-spacing: -.06em; }
+    .home-hero h1 span { white-space: nowrap; }
+    .home-hero__subtitle { max-width: 372px; line-height: 20px; letter-spacing: -.06em; }
+    .home-hero__cta { --home-hero-cta-gradient: linear-gradient(90deg, var(--home-ink), #717171); margin-top: 24px; background: var(--home-ink); color: var(--home-paper); }
+    .home-hero__cta:is(:hover, :focus-visible)::before { opacity: 1; }
+    .home-hero__audit { display: none; }
 }
 
 @media (max-width: 540px) {

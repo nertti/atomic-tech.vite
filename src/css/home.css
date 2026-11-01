@@ -5,6 +5,7 @@
     --home-paper: #f3f3f3;
     --home-muted: #757575;
     --home-accent: #5cf6f1;
+    --home-button-hover: #7ecaca;
 }
 
 .home-page .maxwidth {
@@ -92,8 +93,10 @@ html:has(> .home-page)::-webkit-scrollbar {
     text-decoration: none;
 }
 
-.home-header__nav > a:hover {
-    color: #00636f;
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-header__nav > a:not(.home-header__mobile-contact):hover {
+        color: #00636f;
+    }
 }
 
 .home-header__contact,
@@ -111,11 +114,6 @@ html:has(> .home-page)::-webkit-scrollbar {
 
 .home-header__contact {
     justify-self: end;
-}
-
-.home-header__contact:hover,
-.home-header__mobile-contact:hover {
-    background: #27413f;
 }
 
 .home-header__toggle,
@@ -204,7 +202,7 @@ html:has(> .home-page)::-webkit-scrollbar {
     cursor: pointer;
 }
 
-@media (hover: hover) {
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
     .home-services__categories li:hover > img,
     .home-services__categories li:has(+ li:hover) > img,
     .home-services__links li:hover > img,
@@ -233,7 +231,7 @@ html:has(> .home-page)::-webkit-scrollbar {
     transition: opacity var(--hover-duration) var(--hover-easing);
 }
 
-@media (hover: hover) {
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
     .home-services__categories li:hover > a::before,
     .home-services__links li:hover > a::before {
         opacity: 1;
@@ -359,6 +357,8 @@ html:has(> .home-page)::-webkit-scrollbar {
 }
 
 .home-hero__cta {
+    position: relative;
+    isolation: isolate;
     display: grid;
     place-items: center;
     width: 100%;
@@ -366,15 +366,41 @@ html:has(> .home-page)::-webkit-scrollbar {
     margin-top: 32px;
     padding: 8px 32px;
     border-radius: 100px;
-    background: linear-gradient(90deg, var(--home-ink), #717171);
+    background: var(--home-ink);
     color: var(--home-paper);
     font-size: 16px;
     line-height: 22px;
 }
 
-.home-hero__cta:hover {
-    filter: brightness(1.15);
+.home-hero__cta::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--home-hero-cta-gradient, linear-gradient(90deg, var(--home-ink), #717171));
+    pointer-events: none;
+    transition: opacity var(--hover-duration) var(--hover-easing);
+}
+
+.home-hero__cta:is(:hover, :focus-visible) {
     text-decoration: none;
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-hero__cta:is(:hover, :focus-visible)::before {
+        opacity: 0;
+    }
+}
+
+.home-button-arrow {
+    display: inline-block;
+    flex: none;
+    width: 17.9209px;
+    height: 11.8777px;
+    background: currentColor;
+    mask: url('/img/home-case-arrow.svg') center / contain no-repeat;
+    transform: rotate(180deg);
 }
 
 .home-hero__audit {
@@ -422,8 +448,13 @@ html:has(> .home-page)::-webkit-scrollbar {
 }
 
 .home-hero__audit a:hover {
-    background: rgb(243 243 243 / 15%);
     text-decoration: none;
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-hero__audit a:hover {
+        background: rgb(243 243 243 / 15%);
+    }
 }
 
 .home-hero__audit a img {
@@ -671,6 +702,7 @@ html:has(> .home-page)::-webkit-scrollbar {
     }
 
     .home-hero__cta {
+        --home-hero-cta-gradient: linear-gradient(90deg, #fff, #484848);
         background: linear-gradient(90deg, #fff, #484848);
         color: var(--home-ink);
     }

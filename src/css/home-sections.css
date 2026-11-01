@@ -96,8 +96,13 @@
 }
 
 .home-request-card:hover {
-    box-shadow: 2px 4px 24px rgb(126 126 126 / 24%);
     text-decoration: none;
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-request-card:hover {
+        box-shadow: 2px 4px 24px rgb(126 126 126 / 24%);
+    }
 }
 
 .home-request-card__copy {
@@ -333,8 +338,13 @@
 }
 
 .home-service-card__links a:hover {
-    color: var(--home-accent);
     text-decoration: none;
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-service-card__links a:hover {
+        color: var(--home-accent);
+    }
 }
 
 .home-service-card__arrow {

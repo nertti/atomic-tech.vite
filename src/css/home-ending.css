@@ -386,15 +386,17 @@
     min-height: 56px;
     margin-top: 20px;
     padding: 12px 24px;
-    border: 1px solid var(--home-paper);
+    border: 1px solid #fff;
     border-radius: 100px;
-    background: var(--home-paper);
+    background: #fff;
     color: var(--home-ink);
     font: 600 16px/22px 'Manrope', sans-serif;
     cursor: pointer;
 }
 
-.home-contact__submit:hover { background: var(--home-accent); border-color: var(--home-accent); }
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-contact__submit:is(:hover, :focus-visible) { color: var(--home-button-hover); }
+}
 .home-contact__status { margin: 16px 0 0; font-size: 14px; line-height: 20px; }
 .home-contact__status a { color: var(--home-accent); }
 .home-contact__status[hidden] { display: none; }
@@ -423,7 +425,9 @@
 .home-footer__column h2 { margin: 0 0 7px; font: inherit; line-height: 14px; }
 .home-footer__column p { margin: 0; color: var(--home-muted); }
 .home-footer a { color: inherit; }
-.home-footer a:hover { color: var(--home-accent); }
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-footer a:hover { color: var(--home-accent); }
+}
 
 .home-footer__idea {
     position: absolute;
@@ -456,6 +460,17 @@
     padding: 12px 20px;
     font: 600 18px/22px 'Manrope', sans-serif;
     text-align: center;
+}
+
+.home-footer .home-footer__contact:is(:hover, :focus-visible) {
+    text-decoration: none;
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-footer .home-footer__contact:is(:hover, :focus-visible) {
+        border-color: var(--home-button-hover);
+        color: var(--home-button-hover);
+    }
 }
 
 .home-footer__social {

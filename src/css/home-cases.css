@@ -79,8 +79,15 @@
 
 .home-cases__categories a:hover,
 .home-case__copy a:hover {
-    color: var(--home-ink);
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-cases__categories a:hover,
+    .home-case__copy a:hover {
+        color: var(--home-ink);
+        text-decoration: underline;
+    }
 }
 
 .home-cases__all {
@@ -96,11 +103,17 @@
     text-align: center;
 }
 
-.home-cases__all:hover,
-.home-case__link:hover {
-    background: var(--home-ink);
-    color: var(--home-paper);
+.home-cases__all:is(:hover, :focus-visible),
+.home-case__link:is(:hover, :focus-visible) {
     text-decoration: none;
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-cases__all:is(:hover, :focus-visible),
+    .home-case__link:is(:hover, :focus-visible) {
+        border-color: var(--home-button-hover);
+        color: var(--home-button-hover);
+    }
 }
 
 .home-cases__note {
@@ -312,17 +325,6 @@
     color: var(--home-ink);
     font-size: 16px;
     line-height: 24px;
-}
-
-.home-case__link img {
-    flex: none;
-    max-width: none;
-    transform: rotate(180deg);
-    transition: filter var(--hover-duration) var(--hover-easing);
-}
-
-.home-case__link:hover img {
-    filter: invert(1);
 }
 
 .home-cases .slick-dots {
