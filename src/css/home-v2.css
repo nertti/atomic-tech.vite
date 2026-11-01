@@ -101,8 +101,6 @@
     transform: matrix(.858885, .512169, -.512169, .858885, 0, 0);
 }
 .home-catalog { overflow: clip; padding-bottom: 60px; }
-.home-catalog__scroll { margin-top: 48px; }
-.home-catalog .home-catalog__cards { margin-top: 0; }
 @media (min-width: 901px) {
     .home-catalog__scroll.is-pinned { height: var(--catalog-scroll-height); }
     .home-catalog__scroll.is-pinned .home-catalog__viewport { position: sticky; top: var(--catalog-scroll-top); }
@@ -437,11 +435,6 @@
     .home-team__signature { top: 84px; }
     .home-team__story { margin: 32px auto 0; }
     .home-team__story p { max-width: 332px; margin: 0 auto; font-size: 20px; line-height: 29px; }
-    .home-team__quote p { max-width: 310px; font-size: 16px; line-height: 22.67px; }
-    .home-team__quote cite { margin: 52px 58px 0 0; }
-    .home-team__signature { top: 84px; right: -6px; left: auto; }
-    .home-team__story { margin: 32px 0 0; }
-    .home-team__story p { max-width: 332px; margin: 0; font-size: 20px; line-height: 29px; }
     .home-team__members { gap: 20px; margin-top: 92px; }
     .home-team__controls { justify-content: center; width: 100%; }
     .home-team-card { min-height: 430px; }
