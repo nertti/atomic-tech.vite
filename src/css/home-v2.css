@@ -121,16 +121,24 @@
 .home-service-card {
     min-height: 496px;
     padding: 24px;
-    border: 0;
-    border-radius: 16px;
-    background: #0f1718;
+    border: 1px solid rgb(243 243 243 / 18%);
+    border-radius: 24px;
+    background: rgb(3 18 19 / 55%);
     font-family: 'Manrope', sans-serif;
-    backdrop-filter: none;
+    backdrop-filter: blur(6px);
 }
-.home-service-card--product { background: #0f4141; }
-.home-service-card--automation { background: #0f1718; }
-.home-service-card--design { background: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 20%)), #0f1718; }
-.home-service-card--growth { background: #0f1718; }
+.home-service-card--product, .home-service-card--growth {
+    --home-service-gradient-angle: 138.774121974deg;
+    background: linear-gradient(var(--home-service-gradient-angle), rgb(7 32 33 / 74%), rgb(33 207 205 / 32%));
+}
+.home-service-card--automation {
+    --home-service-gradient-angle: 149.735061476deg;
+    background: linear-gradient(var(--home-service-gradient-angle), rgb(8 26 28 / 85%), rgb(11 102 106 / 54%));
+}
+.home-service-card--design {
+    --home-service-gradient-angle: 155.512239051deg;
+    background: linear-gradient(var(--home-service-gradient-angle), rgb(8 26 28 / 80%), rgb(10 53 55 / 68%));
+}
 .home-service-card__intro { min-height: 0; gap: 8px; }
 .home-service-card h3 { margin: 0; font-size: 24px; font-weight: 600; line-height: 33px; letter-spacing: -.03em; overflow-wrap: normal; }
 .home-service-card p { color: #9caaaa; line-height: 22px; }
@@ -243,9 +251,9 @@
     .home-blog__link:is(:hover, :focus-visible) { border-color: var(--home-button-hover); color: var(--home-button-hover); }
 }
 .home-contact { padding: 100px var(--home-gutter); }
-.home-contact__background { grid-template-columns: minmax(0, 526fr) minmax(0, 577fr); gap: 56px; padding: 48px 57px 48px 32px; background-image: url('/img/home-contact-background-v2.svg'); }
-.home-contact__intro h2 { max-width: 526px; font-size: 40px; line-height: 48px; letter-spacing: -1.2px; }
-.home-contact__intro p { max-width: 381px; margin-top: 8px; font-size: 16px; line-height: 23.2px; }
+.home-contact__background { grid-template-columns: minmax(0, 576fr) minmax(0, 577fr); gap: 56px; padding: 48px 57px 48px 32px; background-image: url('/img/home-contact-background-v2.svg'); }
+.home-contact__intro h2 { max-width: 518px; color: #fff; font-size: 48px; line-height: 48px; letter-spacing: -1.2px; }
+.home-contact__intro p { max-width: 576px; margin-top: 24px; color: rgb(255 255 255 / 80%); font-size: 24px; line-height: 1.45; }
 .home-contact__fields input { font-size: 16px; letter-spacing: -.06em; }
 .home-contact__consents { gap: 24px; }
 .home-footer { padding: 0; font-size: 14px; line-height: 18px; }
@@ -308,6 +316,8 @@
     .home-team__quote cite { font-size: 18px; }
     .home-team__signature { left: 0; width: 240px; height: auto; }
     .home-contact__background { padding: 40px 32px; gap: 32px; }
+    .home-contact__intro h2 { font-size: 40px; line-height: 48px; }
+    .home-contact__intro p { font-size: 20px; }
     .home-contact__consents { grid-template-columns: 1fr; gap: 16px; }
     .home-footer__columns { grid-template-columns: 207px 171px; width: 440px; gap: 32px 24px; }
     .home-footer__idea { grid-template-columns: 1fr; }
@@ -371,9 +381,10 @@
     .home-catalog .home-section-note { max-width: 311px; }
     .home-service-card { min-height: 0; padding: 24px; border: 1px solid rgb(243 243 243 / 18%); border-radius: 24px; gap: 24px; font-family: Arial, sans-serif; }
     .home-service-card--development { background: rgb(3 18 19 / 55%); }
-    .home-service-card--product, .home-service-card--growth { background: url('/img/home-service-product-background.svg') center / 100% 100% no-repeat; }
-    .home-service-card--automation { background: url('/img/home-service-automation-background.svg') center / 100% 100% no-repeat; }
-    .home-service-card--design { background: url('/img/home-service-design-background.svg') center / 100% 100% no-repeat; }
+    .home-service-card--product { --home-service-gradient-angle: 147.488657958deg; }
+    .home-service-card--automation { --home-service-gradient-angle: 156.764397389deg; }
+    .home-service-card--design { --home-service-gradient-angle: 160.486313750deg; }
+    .home-service-card--growth { --home-service-gradient-angle: 144.595704422deg; }
     .home-service-card h3 { font-size: 24px; font-weight: 400; line-height: 30px; letter-spacing: -1.4px; }
     .home-service-card p { line-height: 19.5px; }
     .home-service-card__intro { gap: 16px; }
@@ -452,7 +463,7 @@
     .home-contact { padding: 60px 0; }
     .home-contact__background { grid-template-columns: 1fr; min-height: 863px; gap: 24px; padding: 40px 24px; background-image: url('/img/home-contact-background-mobile.svg'); }
     .home-contact__intro h2 { max-width: 288px; font-size: 36px; line-height: 40px; }
-    .home-contact__intro p { max-width: 300px; margin-top: 16px; }
+    .home-contact__intro p { max-width: 300px; margin-top: 16px; font-size: 16px; }
     .home-contact__consents { grid-template-columns: 1fr; gap: 24px; }
     .home-footer { min-height: 1087px; padding: 0; font-size: 12px; line-height: 16px; }
     .home-footer__inner { padding: 64px var(--home-gutter) 187px; }
