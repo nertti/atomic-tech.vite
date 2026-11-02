@@ -334,7 +334,7 @@
     font: 400 14px/22px 'Manrope', sans-serif;
 }
 
-.home-contact__fields input::placeholder { color: var(--home-paper); opacity: 1; }
+.home-contact__fields input::placeholder { opacity: 1; }
 
 .home-contact__consents {
     display: grid;
