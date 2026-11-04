@@ -10,6 +10,7 @@ import { initHomeCases } from '../js/components/home-cases.js'
 import { initHomeEnding } from '../js/components/home-ending.js'
 import { enableRailDrag } from '../js/components/horizontal-rail.js'
 import { initServiceProcess } from '../js/components/service-process.js'
+import { initServiceTextReveal } from '../js/components/service-text-reveal.js'
 
 const header = document.querySelector('.home-header')
 const mobile = window.matchMedia('(max-width: 900px)')
@@ -21,6 +22,7 @@ const progress = document.querySelector('[data-scroll-progress=".service-cycle__
 initHomeCases()
 initHomeEnding()
 initServiceProcess()
+initServiceTextReveal()
 enableRailDrag(cycle)
 
 function updateProgress() {
