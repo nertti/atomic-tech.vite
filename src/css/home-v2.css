@@ -252,10 +252,13 @@
 }
 .home-contact { padding: 100px var(--home-gutter); }
 .home-contact__background { grid-template-columns: minmax(0, 576fr) minmax(0, 577fr); gap: 56px; padding: 48px 57px 48px 32px; background-image: url('/img/home-contact-background-v2.svg'); }
-.home-contact__intro h2 { max-width: 518px; color: #fff; font-size: 48px; line-height: 48px; letter-spacing: -1.2px; }
-.home-contact__intro p { max-width: 576px; margin-top: 24px; color: rgb(255 255 255 / 80%); font-size: 24px; line-height: 1.45; }
+.home-contact__intro h2 { max-width: 518px; color: #fff; font-size: 40px; line-height: 48px; letter-spacing: -1.2px; }
+.home-contact__intro p { max-width: 576px; margin-top: 24px; color: rgb(255 255 255 / 80%); font-size: 16px; line-height: 1.45; }
 .home-contact__fields input { font-size: 16px; letter-spacing: -.06em; }
 .home-contact__consents { gap: 24px; }
+@media (min-width: 901px) {
+    .home-contact__consents label { font-size: 13.125px; }
+}
 .home-footer { padding: 0; font-size: 14px; line-height: 18px; }
 .home-footer__inner { position: relative; width: 100%; max-width: 1440px; min-height: inherit; padding: 48px var(--home-gutter) 60px; margin-inline: auto; overflow: hidden; }
 .home-footer__columns { grid-template-columns: 230px 131px 210px; gap: 52px 42px; width: 655px; }
@@ -317,7 +320,7 @@
     .home-team__signature { left: 0; width: 240px; height: auto; }
     .home-contact__background { padding: 40px 32px; gap: 32px; }
     .home-contact__intro h2 { font-size: 40px; line-height: 48px; }
-    .home-contact__intro p { font-size: 20px; }
+    .home-contact__intro p { font-size: 16px; }
     .home-contact__consents { grid-template-columns: 1fr; gap: 16px; }
     .home-footer__columns { grid-template-columns: 207px 171px; width: 440px; gap: 32px 24px; }
     .home-footer__idea { grid-template-columns: 1fr; }
