@@ -8,6 +8,7 @@
     <div class="home-why__cards" tabindex="0" role="region" aria-label="Преимущества команды">
         {{#each whyPoints}}
         <article class="home-why-card{{#if variant}} home-why-card--{{variant}}{{/if}}">
+            <span class="home-why-card__surface" aria-hidden="true"></span>
             <span class="home-why-card__number" aria-hidden="true">{{number}}</span>
             <div class="home-why-card__copy">
                 <h3>{{#if lines}}{{#each lines}}<span>{{this}}</span>{{/each}}{{else}}{{title}}{{/if}}</h3>

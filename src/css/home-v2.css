@@ -192,18 +192,36 @@
     .home-cases .slick-vertical .slick-slide { margin-bottom: var(--home-case-gap); }
 }
 .home-why__cards { grid-template-columns: minmax(0, 429fr) minmax(0, 442fr) minmax(0, 441fr); grid-auto-rows: 244px; gap: 16px; margin-top: 40px; }
-.home-why-card { border-radius: 16px; padding: 24px; }
+.home-why-card { --home-why-card-radius: 16px; isolation: isolate; border-color: transparent; border-radius: var(--home-why-card-radius); padding: 24px; background: transparent; }
 .home-why-card h3 { font-size: 24px; line-height: 33px; }
 .home-why-card p { margin-top: 8px; }
-.home-why-card--featured { grid-row: span 2; border-radius: 28px; background: #021011 url('/img/home-why-featured-v2.svg') center / 100% 100%; }
+.home-why-card--featured { --home-why-card-radius: 28px; grid-row: span 2; }
+.home-why-card__surface {
+    position: absolute;
+    z-index: -1;
+    inset: -1px;
+    background: var(--home-ink);
+    clip-path: inset(0 round var(--home-why-card-radius));
+    /* Smooth the composed background and border together, only once. */
+    mask-image: linear-gradient(#fff, #fff);
+    pointer-events: none;
+}
+.home-why-card--featured > .home-why-card__surface { background: #021011 url('/img/home-why-featured-v2.svg') center / 100% 100% no-repeat; }
+.home-why-card__surface::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgb(243 243 243 / 16%);
+    border-radius: var(--home-why-card-radius);
+}
 .home-why-card--featured h3 { font-size: 32px; line-height: 38px; letter-spacing: -.02em; }
 .home-why-card--featured h3 span { display: inline; }
-.home-why-card:not(.home-why-card--featured) { isolation: isolate; transition: color var(--hover-duration) var(--hover-easing); }
-.home-why-card:not(.home-why-card--featured)::before { content: ''; position: absolute; z-index: -1; inset: 0; border-radius: 15px; background: var(--home-ink) url('/img/home-why-hover-v2.svg') center / 100% 100% no-repeat; opacity: 0; pointer-events: none; transition: opacity var(--hover-duration) var(--hover-easing); }
+.home-why-card:not(.home-why-card--featured) { transition: color var(--hover-duration) var(--hover-easing); }
+.home-why-card:not(.home-why-card--featured) > .home-why-card__surface::before { content: ''; position: absolute; inset: 0; background: url('/img/home-why-hover-v2.svg') center / 100% 100% no-repeat; opacity: 0; transition: opacity var(--hover-duration) var(--hover-easing); }
 @media (min-width: 901px) and (hover: hover) and (pointer: fine) {
     .home-why-card:not(.home-why-card--featured) { cursor: pointer; }
     .home-why-card:not(.home-why-card--featured):hover { color: var(--home-paper); }
-    .home-why-card:not(.home-why-card--featured):hover::before { opacity: 1; }
+    .home-why-card:not(.home-why-card--featured):hover > .home-why-card__surface::before { opacity: 1; }
 }
 .home-process { padding-bottom: 78px; }
 .home-process__steps { margin: 40px calc(-1 * var(--home-gutter)) 0; }
@@ -426,7 +444,7 @@
     .home-why__cards::-webkit-scrollbar { display: none; }
     .home-why-card { grid-row: auto; min-height: 299px; padding: 16px; scroll-snap-align: start; }
     .home-why-card.is-active:not(.home-why-card--featured) { color: var(--home-paper); }
-    .home-why-card.is-active:not(.home-why-card--featured)::before { opacity: 1; }
+    .home-why-card.is-active:not(.home-why-card--featured) > .home-why-card__surface::before { opacity: 1; }
     .home-why-card h3 { font-size: 24px; line-height: 33px; }
     .home-why-card p { margin-top: 16px; font-size: 14px; line-height: 19px; }
     .home-why-card--featured { min-height: 309px; }
