@@ -55,7 +55,9 @@
 }
 
 .home-reviews__row {
+    min-width: 0;
     overflow: hidden;
+    overscroll-behavior-x: none;
     cursor: pointer;
 }
 

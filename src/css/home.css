@@ -113,7 +113,10 @@ html:has(> .home-page)::-webkit-scrollbar {
 }
 
 .home-header__contact {
+    position: relative;
+    isolation: isolate;
     justify-self: end;
+    background: transparent;
 }
 
 .home-header__toggle,
@@ -366,20 +369,29 @@ html:has(> .home-page)::-webkit-scrollbar {
     margin-top: 32px;
     padding: 8px 32px;
     border-radius: 100px;
-    background: var(--home-ink);
+    background: transparent;
     color: var(--home-paper);
     font-size: 16px;
     line-height: 22px;
 }
 
-.home-hero__cta::before {
-    content: '';
+.home-button-surface {
     position: absolute;
     z-index: -1;
     inset: 0;
-    border-radius: inherit;
-    background: var(--home-hero-cta-gradient, linear-gradient(90deg, var(--home-ink), #717171));
+    background: var(--home-ink);
+    clip-path: inset(0 round 999px);
+    /* Composite both square backgrounds before smoothing their shared edge. */
+    mask-image: linear-gradient(#fff, #fff);
     pointer-events: none;
+}
+
+.home-button-surface::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/img/home-button-hover.svg') center / 100% 100% no-repeat;
+    opacity: 0;
     transition: opacity var(--hover-duration) var(--hover-easing);
 }
 
@@ -388,8 +400,9 @@ html:has(> .home-page)::-webkit-scrollbar {
 }
 
 @media (min-width: 901px) and (hover: hover) and (pointer: fine) {
-    .home-hero__cta:is(:hover, :focus-visible)::before {
-        opacity: 0;
+    .home-header__contact:is(:hover, :focus-visible) > .home-button-surface::before,
+    .home-hero__cta:is(:hover, :focus-visible) > .home-button-surface::before {
+        opacity: 1;
     }
 }
 
@@ -640,8 +653,12 @@ html:has(> .home-page)::-webkit-scrollbar {
 
     .home-hero__cta {
         --home-hero-cta-gradient: linear-gradient(90deg, #fff, #484848);
-        background: linear-gradient(90deg, #fff, #484848);
+        background: var(--home-hero-cta-gradient);
         color: var(--home-ink);
+    }
+
+    .home-hero__cta > .home-button-surface {
+        display: none;
     }
 
     .home-hero__audit {

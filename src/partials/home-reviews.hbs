@@ -22,7 +22,7 @@
         <div class="home-reviews__row home-reviews__row--{{@index}}" tabindex="0" role="region" aria-label="Отзывы клиентов, лента {{number}}">
             <div class="home-reviews__track">
                 {{#each copies}}
-                <div class="home-reviews__group"{{#if duplicate}} aria-hidden="true"{{/if}}>
+                <div class="home-reviews__group"{{#if duplicate}} aria-hidden="true" data-review-clone inert{{/if}}>
                     {{#each items}}
                     <article class="home-review">
                         <header class="home-review__header">

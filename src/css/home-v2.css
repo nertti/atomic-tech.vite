@@ -489,8 +489,7 @@
     .home-hero h1 { width: 364px; max-width: 100%; color: var(--home-ink); font-size: 32px; line-height: 40px; letter-spacing: -.06em; }
     .home-hero h1 span { white-space: nowrap; }
     .home-hero__subtitle { max-width: 372px; line-height: 20px; letter-spacing: -.06em; }
-    .home-hero__cta { --home-hero-cta-gradient: linear-gradient(90deg, var(--home-ink), #717171); margin-top: 24px; background: var(--home-ink); color: var(--home-paper); }
-    .home-hero__cta:is(:hover, :focus-visible)::before { opacity: 1; }
+    .home-hero__cta { --home-hero-cta-gradient: linear-gradient(90deg, var(--home-ink), #717171); margin-top: 24px; color: var(--home-paper); }
     .home-hero__audit { display: none; }
 }
 
