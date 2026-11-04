@@ -460,20 +460,23 @@ html:has(> .home-page)::-webkit-scrollbar {
     line-height: 22px;
 }
 
-.home-hero__audit a:hover {
+.home-hero__audit a:is(:hover, :focus-visible) {
     text-decoration: none;
 }
 
 @media (min-width: 901px) and (hover: hover) and (pointer: fine) {
-    .home-hero__audit a:hover {
-        background: rgb(243 243 243 / 15%);
+    .home-hero__audit a:is(:hover, :focus-visible) {
+        border-color: #006a74;
+        color: #006a74;
     }
 }
 
-.home-hero__audit a img {
+.home-hero__audit-arrow {
     flex: none;
-    max-width: none;
-    transform: scaleX(-1);
+    width: 19px;
+    height: 15px;
+    background: currentColor;
+    mask: url('/img/home-audit-arrow.svg') center / 19px 15px no-repeat;
 }
 
 .home-stats {

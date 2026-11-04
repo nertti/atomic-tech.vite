@@ -444,6 +444,8 @@
 }
 
 .home-team__buttons button {
+    position: relative;
+    isolation: isolate;
     display: grid;
     place-items: center;
     width: 131px;
@@ -451,13 +453,13 @@
     padding: 0;
     border: 0;
     border-radius: 100px;
-    background: var(--home-ink);
+    background: transparent;
     cursor: pointer;
 }
 
 @media (min-width: 901px) and (hover: hover) and (pointer: fine) {
-    .home-team__buttons button:hover:not(:disabled) {
-        background: #164e51;
+    .home-team__buttons button:is(:hover, :focus-visible):not(:disabled) > .home-button-surface::before {
+        opacity: 1;
     }
 }
 
