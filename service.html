@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>Веб-разработка под ключ — Atomic Studio</title>
+    <meta name="description" content="Создаём сайты под ключ одной командой: исследования, UX/UI-дизайн, разработка, интеграции, тестирование и запуск. Обсудите проект с Atomic Studio.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="home-page service-page">
+    <div class="maxwidth">
+        {{> home-header }}
+        <main id="main">
+            <section class="service-hero" aria-labelledby="service-title">
+                <nav class="service-breadcrumbs" aria-label="Хлебные крошки">
+                    <ol>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="index.html#services">Услуги</a></li>
+                        <li aria-current="page">Разработка сайтов</li>
+                    </ol>
+                </nav>
+                <div class="service-hero__copy">
+                    <h1 id="service-title">Веб-разработка<br>под ключ</h1>
+                    <p>Создаём сайт целиком одной командой:<br class="service-mobile-break"> от понимания бизнес-задачи и структуры<br class="service-mobile-break"> до дизайна, программирования,<br class="service-mobile-break"> интеграций и запуска</p>
+                    <a class="service-hero__cta" href="#contact"><span class="home-button-surface" aria-hidden="true"></span>Обсудить проект</a>
+                </div>
+            </section>
+
+            <section class="service-definition" aria-labelledby="service-definition-title">
+                <h2 id="service-definition-title"><span>Веб-разработка</span> под ключ — это создание готового сайта одной командой</h2>
+                <p>от понимания задачи<br>до публикации и поддержки</p>
+            </section>
+
+            <section class="service-cycle service-section" id="services" aria-labelledby="service-cycle-title">
+                <div class="service-cycle__intro">
+                    <h2 id="service-cycle-title">Берем на себя<br><span>весь цикл разработки</span></h2>
+                    <p class="service-note">Вы не ищете специалистов по отдельности и не собираете процесс вручную — мы ведём проект целиком</p>
+                </div>
+                <div class="service-cycle__cards" tabindex="0" role="region" aria-label="Что входит в разработку сайта">
+                    {{#each serviceCycle}}
+                    <article class="service-cycle-card">
+                        <img class="service-cycle-card__art" src="/img/service-cycle-{{art}}.webp" width="336" height="336" alt="" loading="lazy">
+                        <div class="service-cycle-card__copy"><h3>{{title}}</h3><p>{{description}}</p></div>
+                    </article>
+                    {{/each}}
+                </div>
+                <div class="home-scroll-progress" data-scroll-progress=".service-cycle__cards" aria-hidden="true"><span></span></div>
+            </section>
+
+            <section class="service-process service-section" id="process" aria-labelledby="service-process-title">
+                <div class="service-heading">
+                    <h2 id="service-process-title">Понятный путь<br><span>от задачи до запуска</span></h2>
+                    <p class="service-note">На каждом шаге вы знаете, что происходит, какой результат получите и когда потребуется ваше решение</p>
+                </div>
+                <ol class="service-process__steps">
+                    {{#each serviceSteps}}
+                    <li class="service-process__step">
+                        <span class="service-process__number" aria-hidden="true">{{number}}</span>
+                        <details class="service-process__detail"{{#if active}} open{{/if}}>
+                            <summary>{{#each lines}}<span>{{this}}</span>{{/each}}</summary>
+                            <p>{{description}}</p>
+                        </details>
+                    </li>
+                    {{/each}}
+                </ol>
+            </section>
+
+            <section class="service-scenarios service-section" aria-labelledby="service-scenarios-title">
+                <div class="service-heading">
+                    <h2 id="service-scenarios-title">Когда стоит выбрать<br>веб-разработку под ключ</h2>
+                    <p class="service-note">Формат подходит, когда сайт должен решать задачу бизнеса, а не просто выглядеть современно</p>
+                </div>
+                <div class="service-scenarios__cards">
+                    {{#each serviceScenarios}}
+                    <article class="service-scenario">
+                        <picture class="service-scenario__art">
+                            <source media="(max-width: 900px)" srcset="/img/service-scenario-{{art}}-mobile.webp">
+                            <img src="/img/service-scenario-{{art}}.webp" width="453" height="336" alt="" loading="lazy">
+                        </picture>
+                        <span class="service-scenario__number" aria-hidden="true">{{number}}</span>
+                        <div class="service-scenario__copy"><h3>{{title}}</h3><p>{{description}}</p></div>
+                    </article>
+                    {{/each}}
+                </div>
+            </section>
+
+            <section class="service-responsibility service-section" aria-labelledby="service-responsibility-title">
+                <div class="service-responsibility__intro">
+                    <h2 id="service-responsibility-title">Вы занимаетесь<br><span>бизнесом</span></h2>
+                    <p>Мы — <span>реализацией</span></p>
+                </div>
+                <div class="service-responsibility__list">
+                    <h3>Вам не нужно:</h3>
+                    <ol>{{#each serviceResponsibilities}}<li>{{this}}</li>{{/each}}</ol>
+                </div>
+            </section>
+
+            <section class="service-result" aria-label="Одна команда отвечает за результат">
+                <p><span>Множество</span> процессов → одна команда → один ответственный за результат</p>
+            </section>
+
+            {{> home-cases }}
+
+            <section class="service-faq service-section" aria-labelledby="service-faq-title">
+                <h2 id="service-faq-title">Частые вопросы</h2>
+                <div class="service-faq__list">
+                    {{#each serviceFaq}}
+                    <details>
+                        <summary><span class="service-faq__question">{{question}}</span><span class="service-faq__toggle" aria-hidden="true">+</span></summary>
+                        <p>{{answer}}</p>
+                    </details>
+                    {{/each}}
+                </div>
+            </section>
+            <div class="service-mobile-blog">{{> home-blog }}</div>
+            {{> home-contact }}
+        </main>
+        {{> home-footer }}
+        {{> mob }}
+    </div>
+    <script type="module" src="/src/pages/service.js"></script>
+</body>
+</html>

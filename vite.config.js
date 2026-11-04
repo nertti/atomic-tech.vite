@@ -3,6 +3,7 @@ import handlebars from 'vite-plugin-handlebars'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { requestKinds, serviceGroups, mobileServiceGroups, homeCases, caseCategories, whyPoints, processSteps, teamMembers, homeVideo, reviewRows, blogArticles } from './src/data/home-content.js'
+import { serviceCycle, serviceSteps, serviceScenarios, serviceResponsibilities, serviceFaq } from './src/data/service-content.js'
 
 const root = fileURLToPath(new URL('.', import.meta.url))
 
@@ -13,7 +14,10 @@ export default defineConfig({
     plugins: [
         handlebars({
             partialDirectory: resolve(root, 'src/partials'),
-            context: { requestKinds, serviceGroups, mobileServiceGroups, homeCases, caseCategories, whyPoints, processSteps, teamMembers, homeVideo, reviewRows, blogArticles },
+            context: pagePath => ({ requestKinds, serviceGroups, mobileServiceGroups, homeCases, caseCategories, whyPoints, processSteps, teamMembers, homeVideo, reviewRows, blogArticles, serviceCycle, serviceSteps, serviceScenarios, serviceResponsibilities, serviceFaq, isServicePage: pagePath.endsWith('service.html') }),
+            helpers: {
+                serviceHref: title => ['Веб-разработка', 'Веб-разработка под ключ'].includes(title) ? 'service.html' : '#contact',
+            },
         }),
     ],
     build: {
@@ -21,6 +25,7 @@ export default defineConfig({
         rolldownOptions: {
             input: {
                 home: resolve(root, 'index.html'),
+                service: resolve(root, 'service.html'),
                 projects: resolve(root, 'projects.html'),
                 detail: resolve(root, 'detail.html'),
                 notFound: resolve(root, '404.html'),

@@ -14,7 +14,7 @@
             </div>
             <ul class="home-service-card__links">
                 {{#each items}}
-                <li><a href="#contact"><span>{{this}}</span><img class="home-service-card__arrow" src="/img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
+                <li><a href="{{serviceHref this}}"><span>{{this}}</span><img class="home-service-card__arrow" src="/img/home-catalog-link-arrow.svg" width="13" height="20" alt="" aria-hidden="true"></a></li>
                 {{/each}}
             </ul>
         </article>

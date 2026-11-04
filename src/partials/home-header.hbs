@@ -23,7 +23,7 @@
                         <h2>Разработка сайтов под ключ</h2>
                         <p>Посадочные, корпоративные и e-commerce проекты на технологии, которая подходит задаче бизнеса.</p>
                         <ul class="home-services__links">
-                            <li><a href="#contact">Веб-разработка под ключ<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
+                            <li><a href="service.html">Веб-разработка под ключ<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
                             <li><a href="#contact">Корпоративные сайты<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
                             <li><a href="#contact">Интернет-магазины<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
                             <li><a href="#contact">Лендинги<img src="/img/home-service-arrow.svg" alt=""></a><img src="/img/home-service-row-divider.svg" alt=""></li>
@@ -36,9 +36,9 @@
                 </div>
             </details>
             <a href="#cases">Кейсы</a>
-            <a href="#team">Команда</a>
-            <a href="#reviews">Отзывы</a>
-            <a href="#blog">Блог</a>
+            <a href="{{#if isServicePage}}index.html{{/if}}#team">Команда</a>
+            <a href="{{#if isServicePage}}index.html{{/if}}#reviews">Отзывы</a>
+            <a href="{{#if isServicePage}}index.html{{/if}}#blog">Блог</a>
             <a class="home-header__mobile-contact" href="#contact">Оставить заявку</a>
         </nav>
 

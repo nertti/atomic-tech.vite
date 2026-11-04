@@ -19,7 +19,7 @@
                                 <h3>Выберите услугу</h3>
                                 <ul class="home-mobile-menu__links">
                                     {{#each items}}
-                                    <li><a href="#contact">{{this}}</a></li>
+                                    <li><a href="{{serviceHref this}}">{{this}}</a></li>
                                     {{/each}}
                                 </ul>
                             </section>
@@ -29,9 +29,9 @@
                 </div>
             </li>
             <li><a class="home-mobile-menu__section-link" href="#cases">Кейсы</a></li>
-            <li><a class="home-mobile-menu__section-link" href="#team">Команда</a></li>
-            <li><a class="home-mobile-menu__section-link" href="#reviews">Отзывы</a></li>
-            <li><a class="home-mobile-menu__section-link" href="#blog">Блог</a></li>
+            <li><a class="home-mobile-menu__section-link" href="{{#if isServicePage}}index.html{{/if}}#team">Команда</a></li>
+            <li><a class="home-mobile-menu__section-link" href="{{#if isServicePage}}index.html{{/if}}#reviews">Отзывы</a></li>
+            <li><a class="home-mobile-menu__section-link" href="{{#if isServicePage}}index.html{{/if}}#blog">Блог</a></li>
         </ul>
     </nav>
     <div class="home-mobile-menu__art" aria-hidden="true">
