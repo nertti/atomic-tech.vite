@@ -4,25 +4,21 @@ export function initHomeNavigation(header, mobile) {
     const services = header.querySelector('.home-services')
     const menu = header.querySelector('.home-mobile-menu')
     const backdrop = header.querySelector('.home-header__backdrop')
+    const servicesToggle = menu.querySelector('[data-mobile-services-toggle]')
     const categories = menu.querySelector('[data-mobile-categories]')
     const categoryButtons = [...menu.querySelectorAll('[data-mobile-service]')]
     const panels = [...menu.querySelectorAll('[data-mobile-service-panel]')]
     const originalLabel = header.getAttribute('aria-label')
     const inertElements = new Map()
-    let activeCategory = null
-    let activePanel = null
 
     const isOpen = () => header.classList.contains('is-menu-open')
 
-    function showCategories(restoreFocus = false) {
-        activePanel = null
-        categories.hidden = false
+    function collapseServices() {
+        if (categories.contains(document.activeElement)) servicesToggle.focus({ preventScroll: true })
+        categories.hidden = true
         panels.forEach(panel => { panel.hidden = true })
         categoryButtons.forEach(button => button.setAttribute('aria-expanded', 'false'))
-        toggle.setAttribute('aria-label', 'Закрыть меню')
-        toggle.title = 'Закрыть меню'
-        menu.scrollTop = 0
-        if (restoreFocus) (activeCategory ?? categoryButtons[0]).focus({ preventScroll: true })
+        servicesToggle.setAttribute('aria-expanded', 'false')
     }
 
     function openNavigation() {
@@ -30,18 +26,21 @@ export function initHomeNavigation(header, mobile) {
         header.classList.add('is-menu-open')
         header.setAttribute('role', 'dialog')
         header.setAttribute('aria-modal', 'true')
-        header.setAttribute('aria-label', 'Меню услуг')
+        header.setAttribute('aria-label', 'Меню сайта')
         menu.hidden = false
         backdrop.hidden = false
         toggle.setAttribute('aria-expanded', 'true')
+        toggle.setAttribute('aria-label', 'Закрыть меню')
+        toggle.title = 'Закрыть меню'
         document.documentElement.classList.add('home-navigation-open')
         for (const element of header.parentElement.children) {
             if (element === header) continue
             inertElements.set(element, element.inert)
             element.inert = true
         }
-        activeCategory = null
-        showCategories(true)
+        collapseServices()
+        menu.scrollTop = 0
+        servicesToggle.focus({ preventScroll: true })
     }
 
     function closeNavigation(restoreFocus = false) {
@@ -51,9 +50,9 @@ export function initHomeNavigation(header, mobile) {
         header.removeAttribute('aria-modal')
         header.setAttribute('aria-label', originalLabel)
         services.open = false
+        collapseServices()
         menu.hidden = true
         backdrop.hidden = true
-        showCategories()
         toggle.setAttribute('aria-expanded', 'false')
         toggle.setAttribute('aria-label', 'Открыть меню')
         toggle.title = 'Меню'
@@ -69,27 +68,39 @@ export function initHomeNavigation(header, mobile) {
     toggle.addEventListener('click', () => {
         if (!mobile.matches) return
         if (!isOpen()) openNavigation()
-        else if (activePanel) showCategories(true)
         else closeNavigation(true)
     })
 
     menu.addEventListener('click', event => {
+        if (event.target.closest('[data-mobile-services-toggle]')) {
+            if (categories.hidden) {
+                categories.hidden = false
+                servicesToggle.setAttribute('aria-expanded', 'true')
+            } else collapseServices()
+            return
+        }
         const category = event.target.closest('[data-mobile-service]')
         if (category) {
-            activeCategory = category
-            activePanel = panels.find(panel => panel.id === category.getAttribute('aria-controls'))
-            if (!activePanel) return
-            categories.hidden = true
-            activePanel.hidden = false
-            category.setAttribute('aria-expanded', 'true')
-            toggle.setAttribute('aria-label', 'Вернуться к направлениям услуг')
-            toggle.title = 'Назад к направлениям'
-            menu.scrollTop = 0
-            activePanel.querySelector('h2').focus({ preventScroll: true })
-        } else if (event.target.closest('a')) {
+            const panel = panels.find(panel => panel.id === category.getAttribute('aria-controls'))
+            if (!panel) return
+            const expand = panel.hidden
+            panels.forEach(item => { item.hidden = item !== panel || !expand })
+            categoryButtons.forEach(button => button.setAttribute('aria-expanded', String(button === category && expand)))
+        } else if (event.target.closest('a[href]')) {
+            const link = event.target.closest('a[href]')
+            if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || (link.target && link.target !== '_self')) return
             closeNavigation()
             requestAnimationFrame(() => {
-                document.querySelector('.home-contact__form')?.focus({ preventScroll: true })
+                const target = link.hash === '#contact'
+                    ? document.querySelector('.home-contact__form')
+                    : document.getElementById(link.hash.slice(1))
+                if (!target) return
+                const hadTabIndex = target.hasAttribute('tabindex')
+                if (!hadTabIndex) {
+                    target.setAttribute('tabindex', '-1')
+                    target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true })
+                }
+                target.focus({ preventScroll: true })
             })
         }
     })

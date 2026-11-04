@@ -1,31 +1,40 @@
 <div class="home-mobile-menu" id="home-mobile-menu" hidden>
-    <div class="home-mobile-menu__categories" data-mobile-categories>
-        <nav aria-label="Направления услуг">
-            <ul class="home-mobile-menu__list">
-                {{#each mobileServiceGroups}}
-                <li>
-                    <button class="home-mobile-menu__category" type="button" data-mobile-service="{{variant}}" aria-expanded="false" aria-controls="home-mobile-service-{{variant}}">
-                        <span class="home-mobile-menu__number">{{number}}</span>
-                        <span>{{label}}</span>
-                        <img src="/img/home-service-arrow.svg" width="20" height="20" alt="">
-                    </button>
-                </li>
-                {{/each}}
-            </ul>
-        </nav>
-        <div class="home-mobile-menu__art" aria-hidden="true">
-            <img src="/img/home-services.png" width="1792" height="2400" alt="">
-        </div>
-    </div>
-    {{#each mobileServiceGroups}}
-    <section class="home-mobile-menu__services" id="home-mobile-service-{{variant}}" aria-labelledby="home-mobile-service-{{variant}}-title" data-mobile-service-panel hidden>
-        <h2 id="home-mobile-service-{{variant}}-title" tabindex="-1">{{heading}}</h2>
-        <p>{{description}}</p>
-        <ul class="home-mobile-menu__links">
-            {{#each items}}
-            <li><a href="#contact">{{this}}<img src="/img/home-service-arrow.svg" width="20" height="20" alt=""></a></li>
-            {{/each}}
+    <nav aria-label="Основная навигация">
+        <ul class="home-mobile-menu__navigation">
+            <li>
+                <button class="home-mobile-menu__section-toggle" type="button" data-mobile-services-toggle aria-expanded="false" aria-controls="home-mobile-categories">
+                    <span>Услуги</span><span class="home-mobile-menu__indicator" aria-hidden="true"></span>
+                </button>
+                <div class="home-mobile-menu__categories" id="home-mobile-categories" data-mobile-categories hidden>
+                    <ul class="home-mobile-menu__list">
+                        {{#each mobileServiceGroups}}
+                        <li>
+                            <button class="home-mobile-menu__category" id="home-mobile-service-{{variant}}-toggle" type="button" data-mobile-service="{{variant}}" aria-expanded="false" aria-controls="home-mobile-service-{{variant}}">
+                                <span class="home-mobile-menu__number">{{number}}</span>
+                                <span>{{heading}}</span>
+                                <span class="home-mobile-menu__chevron" aria-hidden="true"></span>
+                            </button>
+                            <section class="home-mobile-menu__services" id="home-mobile-service-{{variant}}" aria-labelledby="home-mobile-service-{{variant}}-toggle" data-mobile-service-panel hidden>
+                                <p>{{description}}</p>
+                                <h3>Выберите услугу</h3>
+                                <ul class="home-mobile-menu__links">
+                                    {{#each items}}
+                                    <li><a href="#contact">{{this}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </section>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </li>
+            <li><a class="home-mobile-menu__section-link" href="#cases">Кейсы</a></li>
+            <li><a class="home-mobile-menu__section-link" href="#team">Команда</a></li>
+            <li><a class="home-mobile-menu__section-link" href="#reviews">Отзывы</a></li>
+            <li><a class="home-mobile-menu__section-link" href="#blog">Блог</a></li>
         </ul>
-    </section>
-    {{/each}}
+    </nav>
+    <div class="home-mobile-menu__art" aria-hidden="true">
+        <img src="/img/home-services.png" width="1792" height="2400" alt="">
+    </div>
 </div>
