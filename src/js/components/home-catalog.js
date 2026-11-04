@@ -1,5 +1,13 @@
 import { enableRailDrag } from './horizontal-rail.js'
 
+export function getCatalogPinTop({ headerBottom, viewportHeight, paddingTop, contentHeight, railTop, railHeight }) {
+    const top = headerBottom + 16 - paddingTop
+    if (contentHeight <= viewportHeight - headerBottom - 32) return top
+    // Let the heading scroll away before pinning, keeping each card fully visible.
+    if (railHeight > viewportHeight - headerBottom - 16) return null
+    return Math.min(top, viewportHeight - 8 - railTop - railHeight)
+}
+
 function pinCatalog(catalog, rail, reducedMotion, mobile) {
     const track = catalog.closest('.home-catalog__scroll')
     const viewport = track.querySelector('.home-catalog__viewport')
@@ -20,13 +28,19 @@ function pinCatalog(catalog, rail, reducedMotion, mobile) {
 
     function measure() {
         const distance = Math.max(0, rail.scrollWidth - rail.clientWidth)
-        const top = (header?.getBoundingClientRect().bottom ?? 0) + 16
         const style = getComputedStyle(catalog)
         const paddingTop = parseFloat(style.paddingTop)
-        const height = catalog.offsetHeight - paddingTop - parseFloat(style.paddingBottom)
-        // Pin the heading and cards together only when the whole group fits.
-        pin = !mobile.matches && distance > 1 && height <= window.innerHeight - top - 16
-            ? { top: top - paddingTop, distance }
+        const railBox = rail.getBoundingClientRect()
+        const top = getCatalogPinTop({
+            headerBottom: header?.getBoundingClientRect().bottom ?? 0,
+            viewportHeight: window.innerHeight,
+            paddingTop,
+            contentHeight: catalog.offsetHeight - paddingTop - parseFloat(style.paddingBottom),
+            railTop: railBox.top - viewport.getBoundingClientRect().top,
+            railHeight: railBox.height,
+        })
+        pin = !mobile.matches && distance > 1 && top !== null
+            ? { top, distance }
             : null
         track.classList.toggle('is-pinned', Boolean(pin))
         if (!pin) {

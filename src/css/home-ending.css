@@ -401,6 +401,8 @@
 .home-contact__status a { color: var(--home-accent); }
 .home-contact__status[hidden] { display: none; }
 
+.home-footer-wrap { background: var(--home-paper); }
+
 .home-footer {
     position: relative;
     min-height: 415px;
@@ -425,6 +427,10 @@
 .home-footer__column h2 { margin: 0 0 7px; font: inherit; line-height: 14px; }
 .home-footer__column p { margin: 0; color: var(--home-muted); }
 .home-footer a { color: inherit; }
+.home-footer__text-link { text-decoration: underline; text-underline-offset: 2px; }
+@media (min-width: 901px) {
+    .home-footer { border-radius: 24px 24px 0 0; }
+}
 @media (min-width: 901px) and (hover: hover) and (pointer: fine) {
     .home-footer a:hover { color: var(--home-accent); }
 }
