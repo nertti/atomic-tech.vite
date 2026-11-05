@@ -1,9 +1,8 @@
 /* Service screen 1936 and the mobile column starting at frame 1, Атом (v4).fig. */
-.service-page { color: var(--home-paper); }
-.service-page main { min-width: 0; }
-.service-page :where(h1, h2, h3, p) { margin: 0; }
-.service-page :where(a, summary, [tabindex="0"]):focus-visible { outline: 2px solid var(--home-heading-accent); outline-offset: 5px; }
-.service-page :where(section[id]) { scroll-margin-top: 100px; }
+.service-main { min-width: 0; color: var(--home-paper); }
+.service-main :where(h1, h2, h3, p) { margin: 0; }
+.service-main :where(a, summary, [tabindex="0"]):focus-visible { outline: 2px solid var(--home-heading-accent); outline-offset: 5px; }
+.service-main :where(section[id]) { scroll-margin-top: 100px; }
 .service-section { padding: 100px 24px; }
 .service-section h2 { font-size: 40px; font-weight: 700; line-height: 48px; letter-spacing: -.06em; text-transform: uppercase; }
 .service-note { max-width: 339px; color: var(--home-muted); font-size: 16px; line-height: 22px; letter-spacing: -.02em; }
@@ -22,9 +21,6 @@
 .service-hero__cta:hover { text-decoration: none; }
 .service-hero__cta > .home-button-surface { background: var(--home-paper); }
 .service-mobile-break { display: none; }
-@media (min-width: 901px) {
-    .service-page .home-header__nav { font-size: 13px; }
-}
 @media (min-width: 901px) and (hover: hover) and (pointer: fine) {
     .service-hero__cta:is(:hover, :focus-visible) { color: var(--home-button-hover); }
 }
@@ -114,13 +110,13 @@
 .service-faq details p { max-width: 472px; margin-left: 80px; padding-right: 8px; color: #757575; font-size: 16px; line-height: 19px; letter-spacing: 0; }
 .service-mobile-blog { display: none; color: var(--home-ink); }
 @media (min-width: 901px) {
-    .service-page .home-contact__background { min-height: 481px; }
-    .service-page .home-contact__intro p { max-width: 381px; margin-top: 8px; }
-    .service-page .home-contact__consents { margin-top: 24px; }
-    .service-page .home-contact__submit { margin-top: 48px; }
+    .service-main .home-contact__background { min-height: 481px; }
+    .service-main .home-contact__intro p { max-width: 381px; margin-top: 8px; }
+    .service-main .home-contact__consents { margin-top: 24px; }
+    .service-main .home-contact__submit { margin-top: 48px; }
 }
 @media (min-width: 1201px) {
-    .service-page .home-contact__background { grid-template-columns: minmax(0, 552fr) minmax(0, 577fr); gap: 108px; padding-left: 48px; }
+    .service-main .home-contact__background { grid-template-columns: minmax(0, 552fr) minmax(0, 577fr); gap: 108px; padding-left: 48px; }
 }
 
 @media (min-width: 1441px) {
@@ -179,7 +175,7 @@
     .service-responsibility li:last-child { min-height: 64px; padding-bottom: 16px; }
     .service-result { min-height: 681px; padding: 40px 16px; }
     .service-result p { max-width: 600px; text-align: left; font-size: 24px; line-height: 33px; }
-    .service-page .home-cases h2 { font-size: 24px; line-height: 26px; }
+    .service-main .home-cases h2 { font-size: 24px; line-height: 26px; }
     .service-faq { display: block; }
     .service-faq h2 { width: 166px; margin-bottom: 24px; font-size: 24px; line-height: 26px; }
     .service-faq summary { grid-template-columns: minmax(0, 1fr) 30px; align-items: start; gap: 24px; padding: 0; }
@@ -190,12 +186,12 @@
     .service-faq details + details { margin-inline: -16px; padding: 20px 16px; }
     .service-faq details p { max-width: 332px; margin: 8px 0 0; padding-right: 0; font-size: 16px; line-height: 19px; }
     .service-mobile-blog { display: block; }
-    .service-page .home-contact { padding-block: 40px; }
-    .service-page .home-contact__background { min-height: 852px; }
-    .service-page .home-contact__fields { gap: 12px; }
-    .service-page .home-contact__submit { order: 1; margin-top: 32px; }
-    .service-page .home-contact__consents { order: 2; margin-top: 16px; }
-    .service-page .home-contact__status { order: 3; }
+    .service-main .home-contact { padding-block: 40px; }
+    .service-main .home-contact__background { min-height: 852px; }
+    .service-main .home-contact__fields { gap: 12px; }
+    .service-main .home-contact__submit { order: 1; margin-top: 32px; }
+    .service-main .home-contact__consents { order: 2; margin-top: 16px; }
+    .service-main .home-contact__status { order: 3; }
 }
 @media (max-width: 359px) {
     .service-cycle__cards { grid-auto-columns: min(336px, calc(100vw - 32px)); }
