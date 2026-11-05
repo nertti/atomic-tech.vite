@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+	--default-color: #0B0B0B;
+	--gray-color: #C4C4C4;
+	--green-color: #00636F;
+	--hover-duration: 280ms;
+	--hover-easing: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--hover-duration: 0ms;
+	}
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-track-piece {
+	background-color: transparent;
+	-webkit-border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:vertical {
+	height: 8px;
+	background-color: var(--default-color);
+	-webkit-border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+	width: 8px;
+	background-color: var(--default-color);
+	-webkit-border-radius: 5px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+*:before, *:after {
+	box-sizing: border-box;
+}
+html, body {
+	width: 100%;
+	overflow-x: hidden;
+}
+body {
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	min-height: 100%;
+	font: 14px/1.55 'Manrope', sans-serif;
+	color: var(--default-color);
+}
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: var(--default-color);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+input, button, select, textarea {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	font-family: 'Manrope', sans-serif;
+}
+button, a {
+	cursor: pointer;
+	transition: var(--hover-duration) var(--hover-easing);
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+img {
+	max-width: 100%;
+}

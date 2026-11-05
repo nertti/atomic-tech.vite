@@ -32,7 +32,8 @@ npm run preview
 
 - `index.html`, `service.html`, `projects.html`, `detail.html`, `404.html`, `policy.html`: страницы сайта.
 - `src/partials/`: общие шапка, подвал и мобильное меню; подключаются через `{{> name }}`.
-- `src/js/main.js`: общая точка входа, подключение CSS и jQuery-плагинов.
+- `src/pages/home.js` и `src/pages/service.js`: модули главной и страницы услуги. Общие компоненты подключаются через `src/js/studio.js` и `src/css/studio.css`.
+- `src/js/main.js`: точка входа для страниц с прежними шаблонами и jQuery-плагинами.
 - `src/js/components/`: меню, фильтр, слайдеры и бегущие строки.
 - `src/css/main.css`: порядок подключения стилей.
 - `public/`: статические изображения, favicon и видео, копируемые без переименования.
@@ -41,9 +42,9 @@ npm run preview
 без префикса `public/`. Vite преобразует их при сборке.
 Изменения `.hbs` автоматически перезагружают страницы на dev-сервере.
 
-Для новой страницы добавьте HTML-файл в корень проекта, подключите
-`/src/js/main.js` как модуль и добавьте страницу в `build.rolldownOptions.input`
-в `vite.config.js`.
+Для новой страницы добавьте HTML-файл в корень проекта, подключите её точку
+входа через `<script type="module">` и добавьте страницу в
+`build.rolldownOptions.input` в `vite.config.js`.
 
 ## Страница услуги
 

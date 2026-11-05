@@ -1,4 +1,5 @@
 import $ from '../jquery-global.js'
+import 'slick-carousel'
 
 export function initHomeCases() {
     const gallery = $('.home-cases__slides')

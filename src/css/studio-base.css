@@ -1,0 +1,99 @@
+.home-page {
+    overflow-x: clip;
+    background: var(--home-ink);
+    --home-ink: #0b0b0b;
+    --home-paper: #f3f3f3;
+    --home-muted: #757575;
+    --home-accent: #5cf6f1;
+    --home-button-hover: #7ecaca;
+    --home-gutter: 48px;
+    --home-heading-accent: #7ecaca;
+}
+
+.home-page .maxwidth {
+    position: relative;
+    overflow: clip;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+html:has(> .home-page) {
+    scrollbar-width: none;
+}
+
+html:has(> .home-page)::-webkit-scrollbar {
+    display: none;
+}
+
+.home-page :where(h1, h2, p) {
+    letter-spacing: 0;
+}
+
+.home-button-surface {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: var(--home-ink);
+    clip-path: inset(0 round 999px);
+    /* Composite both square backgrounds before smoothing their shared edge. */
+    mask-image: linear-gradient(#fff, #fff);
+    pointer-events: none;
+}
+
+.home-button-surface::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/img/home-button-hover.svg') center / 100% 100% no-repeat;
+    opacity: 0;
+    transition: opacity var(--hover-duration) var(--hover-easing);
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+    .home-header__contact:is(:hover, :focus-visible) > .home-button-surface::before,
+    .home-hero__cta:is(:hover, :focus-visible) > .home-button-surface::before {
+        opacity: 1;
+    }
+}
+
+.home-button-arrow {
+    display: inline-block;
+    flex: none;
+    width: 17.9209px;
+    height: 11.8777px;
+    background: currentColor;
+    mask: url('/img/home-case-arrow.svg') center / contain no-repeat;
+    transform: rotate(180deg);
+}
+
+.home-page :where(a, button, summary, [tabindex]):focus-visible {
+    outline: 2px solid #159aab;
+    outline-offset: 5px;
+}
+
+.home-page [id] {
+    scroll-margin-top: 100px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page :where(a, button, summary, img) {
+        transition: none;
+    }
+}
+
+.home-scroll-progress { width: 56px; height: 8px; margin: 32px auto 0; overflow: hidden; border-radius: 4px; background: #595959; }
+.home-scroll-progress span { display: block; width: var(--thumb-width, 28px); height: 100%; border-radius: inherit; background: #116166; transform: translateX(var(--thumb-offset, 0px)); }
+.home-scroll-progress[hidden] { display: none; }
+@media (min-width: 1441px) {
+    .home-page { --home-outer-gutter: calc((100vw - 1440px) / 2); }
+}
+
+@media (min-width: 901px) and (max-width: 1250px) {
+    .home-page { --home-gutter: 32px; }
+}
+
+@media (max-width: 900px) {
+    .home-page { --home-gutter: 16px; }
+}

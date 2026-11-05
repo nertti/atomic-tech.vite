@@ -429,16 +429,6 @@
 	.eco__items .slick-slide {
 		padding: 0 3px;
 	}
-	.slick-dots {
-		gap: 7px;
-	}
-	.slick-dots > li {
-		width: 18px;
-		height: 6px;
-	}
-	.slick-dots > li.slick-active {
-		width: 41px;
-	}
 	.section-title--90, 
 	.section-title--90 * {
 		font-size: 36px;
