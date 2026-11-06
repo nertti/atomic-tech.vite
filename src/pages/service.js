@@ -14,3 +14,4 @@ initStudioPage({
 initServiceProcess()
 initServiceTextReveal()
 enableRailDrag(document.querySelector('.service-cycle__cards'))
+enableRailDrag(document.querySelector('.service-scenarios__cards'))
