@@ -1,7 +1,5 @@
-import '../css/slick.css'
 import '../css/base.css'
 import '../css/studio.css'
-import { initHomeCases } from './components/home-cases.js'
 import { initHomeEnding } from './components/home-ending.js'
 import { initHomeNavigation } from './components/home-navigation.js'
 import { initScrollProgress } from './components/scroll-progress.js'
@@ -12,7 +10,16 @@ export function initStudioPage({ contactLink, getContactTop, waitForFonts = fals
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
     const { closeNavigation } = initHomeNavigation(header, mobile)
 
-    initHomeCases()
+    function loadDesktopCases() {
+        if (mobile.matches) return
+        mobile.removeEventListener('change', loadDesktopCases)
+        import('./components/home-cases.js')
+            .then(({ initHomeCases }) => initHomeCases())
+            .catch(error => console.error('Не удалось загрузить слайдер кейсов', error))
+    }
+
+    mobile.addEventListener('change', loadDesktopCases)
+    loadDesktopCases()
     initHomeEnding()
     initScrollProgress()
 

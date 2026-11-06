@@ -1,3 +1,4 @@
+import '../../css/slick.css'
 import $ from '../jquery-global.js'
 import 'slick-carousel'
 

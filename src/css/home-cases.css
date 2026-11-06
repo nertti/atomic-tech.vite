@@ -1,11 +1,7 @@
 .home-cases {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 592fr) minmax(0, 760fr);
-    gap: 40px;
-    min-height: 844px;
     overflow: hidden;
-    padding: 150px 24px 56px;
     background: var(--home-paper);
     color: var(--home-ink);
 }
@@ -35,9 +31,7 @@
 
 .home-cases h2 {
     margin: 0;
-    font-size: 44px;
     font-weight: 700;
-    line-height: 52.8px;
     text-transform: uppercase;
 }
 
@@ -47,14 +41,6 @@
 
 .home-cases__browse {
     display: grid;
-    gap: 32px;
-}
-
-.home-cases__categories {
-    display: grid;
-    grid-template-columns: max-content max-content minmax(0, 1fr);
-    column-gap: 26px;
-    row-gap: 22px;
 }
 
 .home-cases__categories a {
@@ -64,9 +50,7 @@
     width: fit-content;
     max-width: 100%;
     color: #6d6d6d;
-    font-size: 17px;
     font-weight: 700;
-    line-height: 20px;
 }
 
 .home-cases__categories sup {
@@ -161,7 +145,6 @@
 }
 
 .home-case {
-    height: 638px;
     overflow: hidden;
     border-radius: 25px;
     background: #eeeff5;
@@ -172,9 +155,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 523px;
     overflow: hidden;
-    padding: 15px;
     border-radius: 20px;
 }
 
@@ -371,20 +352,6 @@
 }
 
 @media (max-width: 1250px) {
-    .home-cases h2 {
-        font-size: 36px;
-        line-height: 44px;
-    }
-
-    .home-cases__categories {
-        grid-template-columns: minmax(0, 1fr) max-content;
-        gap: 18px;
-    }
-
-    .home-cases__categories a {
-        font-size: 14px;
-    }
-
     .home-case__metrics {
         flex-direction: column;
         align-items: flex-start;
@@ -406,14 +373,6 @@
 }
 
 @media (max-width: 900px) {
-    .home-cases {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        min-height: 0;
-        padding: 40px 16px 56px;
-    }
-
     .home-cases__watermark {
         top: 0;
         left: -5px;
@@ -421,33 +380,8 @@
         filter: blur(1.5px);
     }
 
-    .home-cases h2 {
-        font-size: 23px;
-        line-height: 30px;
-    }
-
-    .home-cases__browse {
-        gap: 24px;
-        margin-top: 24px;
-    }
-
-    .home-cases__categories {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 16px;
-        row-gap: 16px;
-    }
-
     .home-cases__note {
         display: none;
-    }
-
-    .home-case {
-        height: auto;
-    }
-
-    .home-case__media {
-        height: 420px;
-        padding: 12px;
     }
 
     .home-case__metrics {
@@ -458,46 +392,12 @@
         padding-right: 10px;
     }
 
-    .home-case__metric p {
-        font-size: 11px;
-        line-height: 16px;
-    }
-
-    .home-case__footer {
-        padding: 16px;
-    }
-
     .home-case__copy h3 {
-        font-size: 18px;
-        line-height: 24px;
         overflow-wrap: anywhere;
-    }
-
-    .home-case__copy p {
-        font-size: 12px;
-        line-height: 18px;
-    }
-
-    .home-cases .slick-dots {
-        top: 178px;
-        right: 1px;
     }
 }
 
 @media (max-width: 374px) {
-    .home-cases h2 {
-        font-size: 20px;
-        line-height: 27px;
-    }
-
-    .home-cases__categories {
-        gap: 16px 12px;
-    }
-
-    .home-cases__categories a {
-        font-size: 12px;
-    }
-
     .home-case__tag {
         padding-inline: 7px;
         font-size: 12px;

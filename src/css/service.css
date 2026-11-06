@@ -2,7 +2,6 @@
 .service-main { min-width: 0; color: var(--home-paper); }
 .service-main :where(h1, h2, h3, p) { margin: 0; }
 .service-main :where(a, summary, [tabindex="0"]):focus-visible { outline: 2px solid var(--home-heading-accent); outline-offset: 5px; }
-.service-main :where(section[id]) { scroll-margin-top: 100px; }
 .service-section { padding: 100px 24px; }
 .service-section h2 { font-size: 40px; font-weight: 700; line-height: 48px; letter-spacing: -.06em; text-transform: uppercase; }
 .service-note { max-width: 339px; color: var(--home-muted); font-size: 16px; line-height: 22px; letter-spacing: -.02em; }

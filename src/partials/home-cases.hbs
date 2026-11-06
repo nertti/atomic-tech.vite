@@ -17,23 +17,23 @@
                 <div class="home-case__media">
                     <div class="home-case__images" aria-hidden="true">
                         {{#each layers}}
-                        <img src="/img/home-case-{{this}}.png" alt="">
+                        <img src="/img/home-case-{{this}}.png" alt="" loading="lazy" decoding="async">
                         {{/each}}
                     </div>
                     <div class="home-case__tags">
                         <span class="home-case__tag">
-                            <span class="home-case__bag"><img src="/img/home-case-bag.svg" alt=""></span>
+                            <span class="home-case__bag"><img src="/img/home-case-bag.svg" alt="" loading="lazy"></span>
                             Интернет-магазин
                         </span>
                         <span class="home-case__tag">
-                            <span class="home-case__bitrix"><img src="/img/home-case-bitrix.png" alt=""></span>
+                            <span class="home-case__bitrix"><img src="/img/home-case-bitrix.png" alt="" loading="lazy" decoding="async"></span>
                             1c bitrix
                         </span>
                     </div>
                     <div class="home-case__metrics">
                         {{#each metrics}}
                         <div class="home-case__metric">
-                            <img src="/img/home-case-star{{#if small}}-small{{/if}}.svg" alt="">
+                            <img src="/img/home-case-star{{#if small}}-small{{/if}}.svg" alt="" loading="lazy">
                             <p><strong>{{title}}</strong><br>{{value}}</p>
                         </div>
                         {{/each}}

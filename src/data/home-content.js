@@ -203,7 +203,7 @@ export const reviewRows = [[2, 2, 3, 0, 0, 1], [0, 1, 2, 3, 3, 3]].map((order, i
 
 export const blogArticles = [
     // Replace the section placeholders with article URLs when they are available.
-    { number: 1, image: 'home-blog-1.png', category: 'Бизнес', minutes: 7, href: '#blog' },
-    { number: 2, image: 'home-blog-2.png', category: 'E-mail', minutes: 8, href: '#blog' },
-    { number: 3, image: 'home-blog-3.png', category: 'Дизайн', minutes: 3, href: '#blog' },
+    { number: 1, image: 'home-case-2.png', category: 'Бизнес', minutes: 7, href: '#blog' },
+    { number: 2, image: 'home-case-1.png', category: 'E-mail', minutes: 8, href: '#blog' },
+    { number: 3, image: 'home-case-4.png', category: 'Дизайн', minutes: 3, href: '#blog' },
 ]
