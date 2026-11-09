@@ -1,53 +1,32 @@
 import '../../css/slick.css'
 import $ from '../jquery-global.js'
 import 'slick-carousel'
+import { createCasesWheelController } from './cases-wheel.js'
 
 export function initHomeCases() {
     const gallery = $('.home-cases__slides')
     if (!gallery.length) return
 
     const mobile = window.matchMedia('(max-width: 900px)')
-    let wheelDirection = 0
-    let wheelDistance = 0
-    let wheelTime = -Infinity
-    let wheelHandled = false
+    const header = document.querySelector('.home-header')
+    const wheel = createCasesWheelController(direction => gallery.slick(direction > 0 ? 'slickNext' : 'slickPrev'))
 
     gallery[0].addEventListener('wheel', event => {
-        if (mobile.matches || event.ctrlKey || event.defaultPrevented || !gallery.hasClass('slick-initialized')) return
-
-        const axis = Math.abs(event.deltaY) >= Math.abs(event.deltaX) ? event.deltaY : event.deltaX
-        const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? gallery[0].clientHeight : 1
-        const delta = axis * unit
-        if (!Number.isFinite(delta) || delta === 0) return
-
-        const direction = Math.sign(delta)
-        const now = performance.now()
-        if (direction !== wheelDirection || now - wheelTime > 180) {
-            wheelDistance = 0
-            wheelHandled = false
+        if (mobile.matches || !gallery.hasClass('slick-initialized')) {
+            wheel.reset()
+            return
         }
-        wheelDirection = direction
-        wheelTime = now
-
-        const slider = gallery.slick('getSlick')
-        const canMove = direction > 0 ? slider.currentSlide < slider.slideCount - 1 : slider.currentSlide > 0
-        if (!canMove && !wheelHandled) return
-
-        event.preventDefault()
-        // Keep a trackpad's momentum on the slide selected by this gesture.
-        if (wheelHandled || slider.animating) return
-        wheelDistance += delta
-        if (Math.abs(wheelDistance) < 24) return
-
-        wheelHandled = true
-        gallery.slick(direction > 0 ? 'slickNext' : 'slickPrev')
+        const viewportTop = Math.max(0, header?.getBoundingClientRect().bottom ?? 0)
+        // On short screens, let the page scroll so the entire case can be read.
+        if (gallery[0].clientHeight > window.innerHeight - viewportTop) {
+            wheel.reset()
+            return
+        }
+        wheel.handle(event, gallery.slick('getSlick'), gallery[0].clientHeight)
     }, { passive: false })
 
     function updateLayout() {
-        wheelDirection = 0
-        wheelDistance = 0
-        wheelTime = -Infinity
-        wheelHandled = false
+        wheel.reset()
         const initialized = gallery.hasClass('slick-initialized')
         if (mobile.matches) {
             if (initialized) gallery.slick('unslick')
