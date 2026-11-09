@@ -187,9 +187,6 @@
     .service-heading > .service-note { margin: 16px 0 0; }
     .service-hero { min-height: 848px; background-image: url('/img/service-hero-mobile.svg'); }
     .service-breadcrumbs { display: none; }
-    .service-definition { min-height: 848px; padding: 375px 16px 40px; text-align: left; }
-    .service-definition h2 { width: 100%; max-width: 600px; margin: 0; font-size: 24px; line-height: 33px; letter-spacing: -.04em; }
-    .service-definition p { display: none; }
     .service-cycle { display: block; padding-block: 64px; }
     .service-cycle h2 { font-size: 28px; line-height: 38px; }
     .service-cycle h2 span { color: #757575; }
@@ -220,8 +217,6 @@
     .service-responsibility li { grid-template-columns: 24px minmax(0, 1fr); gap: 16px; min-height: 64px; padding: 16px 0; font-size: 14px; line-height: 19px; letter-spacing: -.02em; }
     .service-responsibility li::before { font-size: 14px; line-height: 19px; }
     .service-responsibility li:last-child { min-height: 64px; padding-bottom: 16px; }
-    .service-result { min-height: 681px; padding: 40px 16px; }
-    .service-result p { max-width: 600px; text-align: left; font-size: 24px; line-height: 33px; }
     .service-main .home-cases h2 { font-size: 24px; line-height: 26px; }
     .service-faq { display: block; }
     .service-faq h2 { width: 166px; margin-bottom: 24px; font-size: 24px; line-height: 26px; }
@@ -241,7 +236,12 @@
     .service-main .home-contact__status { order: 3; }
 }
 @media (max-width: 600px) {
-    .service-hero__copy { width: auto; padding: 542px 16px 56px; text-align: left; }
+    .service-result { min-height: 681px; padding: 40px 16px; }
+    .service-result p { max-width: 600px; font-size: 24px; line-height: 33px; }
+    .service-definition { min-height: 848px; padding: 375px 16px 40px; }
+    .service-definition h2 { width: 100%; max-width: 600px; margin: 0; font-size: 24px; line-height: 33px; letter-spacing: -.04em; }
+    .service-definition p { display: none; }
+    .service-hero__copy { width: auto; padding: 542px 16px 56px; }
     .service-hero h1 { font-size: 24px; line-height: 33px; }
     .service-hero__copy > p { max-width: none; margin: 8px 0 32px; font-size: 16px; line-height: 22px; letter-spacing: -.04em; }
     .service-mobile-break { display: initial; }
