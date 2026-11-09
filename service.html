@@ -68,7 +68,7 @@
                         <span class="service-process__number" aria-hidden="true">{{number}}</span>
                         <details class="service-process__detail"{{#if active}} open{{/if}}>
                             <summary>{{#each lines}}<span>{{this}}</span>{{/each}}</summary>
-                            <p>{{description}}</p>
+                            <div class="service-process__description"><p>{{description}}</p></div>
                         </details>
                     </li>
                     {{/each}}

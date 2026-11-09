@@ -25,6 +25,16 @@ export function initServiceProcess() {
         frame = null
         // Headings keep their position when the description opens or closes.
         const nextIndex = findVisibleProcessStep(summaries, header)
+        if (nextIndex !== -1 && activeIndex !== -1 && nextIndex !== activeIndex) {
+            const center = (Math.max(0, header?.getBoundingClientRect().bottom ?? 0) + window.innerHeight) / 2
+            const distance = index => {
+                const bounds = summaries[index].getBoundingClientRect()
+                return Math.abs((bounds.top + bounds.bottom) / 2 - center)
+            }
+            // Keep the current stage until the next heading is clearly closer.
+            // This prevents small scroll reversals at the boundary from flickering.
+            if (distance(nextIndex) + 24 >= distance(activeIndex)) return
+        }
         if (nextIndex !== -1) activate(nextIndex)
     }
 
