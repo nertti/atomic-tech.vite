@@ -182,7 +182,7 @@
 @media (max-width: 900px) {
     .service-section { padding: 40px 16px; }
     .service-section h2 { font-size: 24px; line-height: 33px; }
-    .service-note { max-width: 290px; font-size: 14px; line-height: 19px; }
+    .service-note { max-width: 310px; font-size: 14px; line-height: 19px; }
     .service-heading { display: block; margin-bottom: 20px; }
     .service-heading > .service-note { margin: 16px 0 0; }
     .service-hero { min-height: 848px; background-image: url('/img/service-hero-mobile.svg'); }
