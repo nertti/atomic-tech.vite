@@ -41,19 +41,21 @@
     .service-definition.is-reveal-ready.is-revealed > p { transition-delay: 120ms; }
 }
 
-.service-cycle { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 688px); gap: 40px 62px; padding-right: calc(max(24px, (100% - 1392px) / 2) + 8px); border-radius: 24px; background: var(--home-paper); color: var(--home-ink); }
-.service-cycle h2 span { color: #757575; }
-.service-cycle__intro > p { margin-top: 24px; }
+.service-cycle { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 688px); gap: 40px 62px; padding-right: calc(max(24px, (100% - 1392px) / 2) + 8px); background: var(--home-paper); color: var(--home-ink); }
+.service-cycle h2 { letter-spacing: -.04em; }
+.service-cycle h2 span { color: #a7a7a7; }
+.service-cycle__intro > p { margin-top: 16px; letter-spacing: 0; }
 .service-cycle__cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; min-width: 0; }
-.service-cycle-card { position: relative; isolation: isolate; height: 336px; overflow: hidden; border-radius: 16px; background: #fff; }
-.service-cycle-card__art { position: absolute; top: 0; right: 0; z-index: -1; width: 336px; height: 336px; pointer-events: none; }
-.service-cycle-card__background, .service-cycle-card__foreground { position: absolute; inset: 0; display: block; width: 336px; height: 336px; max-width: none; }
+.service-cycle-card { position: relative; isolation: isolate; height: 260px; overflow: hidden; border-radius: 16px; background: #fff; }
+.service-cycle-card__art { position: absolute; top: 0; right: 0; z-index: -1; width: 336px; height: 260px; pointer-events: none; }
+.service-cycle-card__background, .service-cycle-card__foreground { position: absolute; inset: 0; display: block; width: 336px; height: 260px; max-width: none; }
+.service-cycle-card__art img { display: block; width: 336px; height: auto; max-width: none; }
 .service-cycle-glass { position: absolute; top: 0; left: 0; display: block; transform-origin: 0 0; backdrop-filter: blur(var(--glass-blur, 2px)); }
+.service-cycle-glass--mobile { display: none; }
 .service-cycle-glass--tile { box-shadow: inset 1px 1px 0 rgb(255 255 255 / 80%), inset -1px -1px 0 rgb(0 75 83 / 20%); }
 .service-cycle-card__copy { padding: 16px 32px 16px 16px; }
 .service-cycle-card h3, .service-scenario h3 { font-size: 20px; font-weight: 600; line-height: 27px; letter-spacing: 0; }
 .service-cycle-card p, .service-scenario p { max-width: 288px; margin-top: 8px; color: #757575; font-size: 16px; line-height: 22px; letter-spacing: 0; }
-.service-cycle > .home-scroll-progress { display: none; }
 
 .service-process h2 span { color: var(--home-accent); }
 .service-process__steps { position: relative; width: min(622px, 100%); margin: 200px auto 224px; }
@@ -163,13 +165,17 @@
     .service-definition { min-height: 848px; padding: 375px 16px 40px; text-align: left; }
     .service-definition h2 { width: 100%; max-width: 600px; margin: 0; font-size: 24px; line-height: 33px; letter-spacing: -.04em; }
     .service-definition p { display: none; }
-    .service-cycle { display: block; padding-bottom: 24px; border-radius: 0; }
-    .service-cycle__intro > p { margin-top: 16px; }
+    .service-cycle { display: block; padding-block: 64px; }
+    .service-cycle h2 { font-size: 28px; line-height: 38px; }
+    .service-cycle h2 span { color: #757575; }
+    .service-cycle__intro > p { margin-top: 8px; }
     .service-cycle__cards { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 336px; gap: 16px; overflow-x: auto; margin: 20px -16px 0 0; padding: 0 16px 0 0; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
     .service-cycle__cards::-webkit-scrollbar { display: none; }
-    .service-cycle-card { scroll-snap-align: start; }
+    .service-cycle-card { height: 336px; scroll-snap-align: start; }
+    .service-cycle-card__art, .service-cycle-card__background, .service-cycle-card__foreground { height: 336px; }
+    .service-cycle-glass--mobile { display: block; }
+    .service-cycle-glass--desktop { display: none; }
     .service-cycle__cards.is-dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
-    .service-cycle > .home-scroll-progress { display: block; margin: 20px auto 0; }
     .service-process__steps { width: 100%; margin: 63px 0 20px; }
     .service-process__steps::before { top: -56px; bottom: -24px; left: 12px; }
     .service-process__step { display: block; min-height: 224px; padding-left: 56px; }

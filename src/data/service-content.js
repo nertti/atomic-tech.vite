@@ -4,7 +4,7 @@ export const serviceCycle = [
     { art: 'research', title: 'Исследования', description: 'Разбираемся в бизнесе, аудитории и точках роста. Формируем структуру и ключевые сценарии' },
     { art: 'design', title: 'UX/UI-дизайн', description: 'Превращаем логику в понятный интерфейс и готовим макеты для всех нужных устройств', glass: serviceCycleArt.design },
     { art: 'development', title: 'Разработка', description: 'Собираем интерфейс в коде, программируем функции и подключаем согласованные сервисы.' },
-    { art: 'launch', title: 'Тестирование и запуск', description: 'Проверяем сценарии, публикуем сайт, передаём доступы и остаёмся на связи', glass: serviceCycleArt.launch, foreground: true },
+    { art: 'launch', title: 'Тестирование и запуск', description: 'Проверяем сценарии, публикуем сайт, передаём доступы и остаёмся на связи', glass: serviceCycleArt.launch, glassDesktop: serviceCycleArt.launchDesktop, glassViewport: 'mobile', foreground: true },
 ]
 
 export const serviceSteps = [

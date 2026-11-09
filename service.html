@@ -34,21 +34,27 @@
             <section class="service-cycle service-section" id="services" aria-labelledby="service-cycle-title">
                 <div class="service-cycle__intro">
                     <h2 id="service-cycle-title">Берем на себя<br><span>весь цикл разработки</span></h2>
-                    <p class="service-note">Вы не ищете специалистов по отдельности и не собираете процесс вручную — мы ведём проект целиком</p>
+                    <p class="service-note">Вы не ищете специалистов по отдельности и не собираете процесс вручную —<br>мы ведём проект целиком</p>
                 </div>
                 <div class="service-cycle__cards" tabindex="0" role="region" aria-label="Что входит в разработку сайта">
                     {{#each serviceCycle}}
                     <article class="service-cycle-card">
                         <div class="service-cycle-card__art" aria-hidden="true">
-                            <img class="service-cycle-card__background" src="/img/service-cycle-{{art}}.svg" width="336" height="336" alt="" loading="lazy">
-                            {{#each glass}}<span class="service-cycle-glass service-cycle-glass--{{kind}}" style="{{style}}"></span>{{/each}}
-                            {{#if foreground}}<img class="service-cycle-card__foreground" src="/img/service-cycle-{{art}}-foreground.svg" width="336" height="336" alt="" loading="lazy">{{/if}}
+                            <picture class="service-cycle-card__background">
+                                <source media="(min-width: 901px)" srcset="/img/service-cycle-{{art}}-desktop.svg" width="336" height="260">
+                                <img src="/img/service-cycle-{{art}}.svg" width="336" height="336" alt="" loading="lazy">
+                            </picture>
+                            {{#each glass}}<span class="service-cycle-glass service-cycle-glass--{{kind}}{{#if ../glassViewport}} service-cycle-glass--{{../glassViewport}}{{/if}}" style="{{style}}"></span>{{/each}}
+                            {{#each glassDesktop}}<span class="service-cycle-glass service-cycle-glass--{{kind}} service-cycle-glass--desktop" style="{{style}}"></span>{{/each}}
+                            {{#if foreground}}<picture class="service-cycle-card__foreground">
+                                <source media="(min-width: 901px)" srcset="/img/service-cycle-{{art}}-foreground-desktop.svg" width="336" height="260">
+                                <img src="/img/service-cycle-{{art}}-foreground.svg" width="336" height="336" alt="" loading="lazy">
+                            </picture>{{/if}}
                         </div>
                         <div class="service-cycle-card__copy"><h3>{{title}}</h3><p>{{description}}</p></div>
                     </article>
                     {{/each}}
                 </div>
-                <div class="home-scroll-progress" data-scroll-progress=".service-cycle__cards" aria-hidden="true"><span></span></div>
             </section>
 
             <section class="service-process service-section" id="process" aria-labelledby="service-process-title">

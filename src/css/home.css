@@ -130,8 +130,8 @@
 
 @media (min-width: 901px) and (hover: hover) and (pointer: fine) {
     .home-hero__audit a:is(:hover, :focus-visible) {
-        border-color: #006a74;
-        color: #006a74;
+        border-color: var(--home-button-hover);;
+        color: var(--home-button-hover);;
     }
 }
 
