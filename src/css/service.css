@@ -48,14 +48,14 @@
     .service-responsibility__list.is-reveal-ready.is-revealed li {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity 700ms ease, transform 700ms cubic-bezier(.22, 1, .36, 1);
+        transition: opacity 1500ms ease, transform 1500ms cubic-bezier(.22, 1, .36, 1);
     }
-    .service-responsibility__list.is-revealed li:nth-child(1) { transition-delay: 80ms; }
-    .service-responsibility__list.is-revealed li:nth-child(2) { transition-delay: 160ms; }
-    .service-responsibility__list.is-revealed li:nth-child(3) { transition-delay: 240ms; }
-    .service-responsibility__list.is-revealed li:nth-child(4) { transition-delay: 320ms; }
-    .service-responsibility__list.is-revealed li:nth-child(5) { transition-delay: 400ms; }
-    .service-responsibility__list.is-revealed li:nth-child(6) { transition-delay: 480ms; }
+    .service-responsibility__list.is-revealed li:nth-child(1) { transition-delay: 100ms; }
+    .service-responsibility__list.is-revealed li:nth-child(2) { transition-delay: 200ms; }
+    .service-responsibility__list.is-revealed li:nth-child(3) { transition-delay: 300ms; }
+    .service-responsibility__list.is-revealed li:nth-child(4) { transition-delay: 400ms; }
+    .service-responsibility__list.is-revealed li:nth-child(5) { transition-delay: 500ms; }
+    .service-responsibility__list.is-revealed li:nth-child(6) { transition-delay: 600ms; }
 }
 
 .service-cycle { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 688px); gap: 40px 62px; padding-right: calc(max(24px, (100% - 1392px) / 2) + 8px); background: var(--home-paper); color: var(--home-ink); }
@@ -125,7 +125,6 @@
 .service-responsibility { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; border-radius: 0 0 24px 24px; background: var(--home-paper); color: var(--home-ink); }
 .service-responsibility__intro { display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
 .service-responsibility__intro > p { font-size: 40px; font-weight: 700; line-height: 55px; letter-spacing: -.06em; text-transform: uppercase; }
-.service-responsibility__intro span { color: #757575; }
 .service-responsibility h3 { margin-bottom: 0; font-size: 24px; line-height: 33px; font-weight: 400; letter-spacing: -.06em; }
 .service-responsibility ol { counter-reset: responsibility; }
 .service-responsibility li { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 5px; min-height: 80px; padding: 16px 20px 16px 35px; font-size: 20px; line-height: 27px; letter-spacing: -.04em; }
@@ -151,7 +150,7 @@
 .service-faq details::details-content { display: grid; grid-template-rows: 0fr; content-visibility: visible; opacity: 0; visibility: hidden; transition: grid-template-rows var(--faq-transition) cubic-bezier(.22, 1, .36, 1), opacity var(--faq-transition) ease, visibility var(--faq-transition); }
 .service-faq details[open]::details-content { grid-template-rows: 1fr; opacity: 1; visibility: visible; }
 .service-faq__answer { min-height: 0; overflow: hidden; }
-.service-faq details p { max-width: 472px; margin-left: 80px; padding-right: 8px; color: #757575; font-size: 16px; line-height: 19px; letter-spacing: 0; }
+.service-faq details p { margin-left: 80px; padding-right: 8px; color: #757575; font-size: 16px; line-height: 19px; letter-spacing: 0; }
 @media (prefers-reduced-motion: reduce) {
     .service-faq { --faq-transition: 0ms; }
 }
@@ -227,7 +226,7 @@
     .service-faq details { padding-bottom: 20px; }
     .service-faq details[open], .service-faq details[open]:last-child { min-height: 0; }
     .service-faq details + details { margin-inline: -16px; padding: 20px 16px; }
-    .service-faq details p { max-width: 332px; margin: 8px 0 0; padding-right: 0; font-size: 16px; line-height: 19px; }
+    .service-faq details p { margin: 8px 0 0; padding-right: 0; font-size: 16px; line-height: 19px; }
     .service-mobile-blog { display: block; }
     .service-main .home-contact { padding-block: 40px; }
     .service-main .home-contact__background { min-height: 852px; }
@@ -242,7 +241,7 @@
     .service-definition { min-height: 848px; padding: 375px 16px 40px; }
     .service-definition h2 { width: 100%; max-width: 600px; margin: 0; font-size: 24px; line-height: 33px; letter-spacing: -.04em; }
     .service-definition p { display: none; }
-    .service-hero__copy { width: auto; padding: 542px 16px 56px; }
+    .service-hero__copy { width: auto; padding: 542px 16px 56px; text-align: left}
     .service-hero h1 { font-size: 34px; line-height: 33px; }
     .service-hero__copy > p { max-width: none; margin: 8px 0 32px; font-size: 16px; line-height: 22px; letter-spacing: -.04em; }
     .service-mobile-break { display: initial; }
